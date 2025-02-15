@@ -1,0 +1,3 @@
+/home/krizpe/Documents/EDEN/build/CMakeFiles/EDEN.dir
+/home/krizpe/Documents/EDEN/build/CMakeFiles/edit_cache.dir
+/home/krizpe/Documents/EDEN/build/CMakeFiles/rebuild_cache.dir
