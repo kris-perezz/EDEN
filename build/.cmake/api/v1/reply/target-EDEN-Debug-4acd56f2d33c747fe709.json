@@ -83,6 +83,10 @@
 				{
 					"backtrace" : 7,
 					"path" : "/home/krizpe/Documents/EDEN/dependencies"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/krizpe/Documents/EDEN/inc"
 				}
 			],
 			"language" : "CXX",
@@ -103,6 +107,10 @@
 				{
 					"backtrace" : 7,
 					"path" : "/home/krizpe/Documents/EDEN/dependencies"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/krizpe/Documents/EDEN/inc"
 				}
 			],
 			"language" : "C",
@@ -172,7 +180,7 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "src/config.h",
+			"path" : "inc/config.h",
 			"sourceGroupIndex" : 0
 		},
 		{

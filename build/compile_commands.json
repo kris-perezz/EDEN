@@ -1,13 +1,13 @@
 [
 {
   "directory": "/home/krizpe/Documents/EDEN/build",
-  "command": "/sbin/clang++ -I/home/krizpe/Documents/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /home/krizpe/Documents/EDEN/src/main.cpp",
+  "command": "/sbin/g++ -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /home/krizpe/Documents/EDEN/src/main.cpp",
   "file": "/home/krizpe/Documents/EDEN/src/main.cpp",
   "output": "CMakeFiles/EDEN.dir/src/main.cpp.o"
 },
 {
   "directory": "/home/krizpe/Documents/EDEN/build",
-  "command": "/sbin/clang -I/home/krizpe/Documents/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/krizpe/Documents/EDEN/src/glad.c",
+  "command": "/sbin/gcc -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/krizpe/Documents/EDEN/src/glad.c",
   "file": "/home/krizpe/Documents/EDEN/src/glad.c",
   "output": "CMakeFiles/EDEN.dir/src/glad.c.o"
 }

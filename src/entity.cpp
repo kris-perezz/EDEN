@@ -10,6 +10,13 @@ entity::entity(std::vector<float> verts) {
     this->vertCount = verts.size();
 }
 
+entity::entity(std::vector<float> verts, std::vector<unsigned int> indicies) {
+    this->verts = verts;
+    this->indicies = indicies;
+    this->vertCount = verts.size();
+    this->indexCount = indicies.size();
+}
+
 entity::entity(entity &copy) {
     this->vertCount = copy.getVertCount();
     //glm::vec3 newverts[vertCount];
@@ -29,6 +36,15 @@ float* entity::getVertices() {
     return this->verts.data();
 }
 
+unsigned int* entity::getIndices() {
+    return this->indicies.data();
+}
+
+
 int entity::getVertCount() {
     return this->vertCount;
+}
+
+int entity::getIndexCount() {
+    return this->indexCount;
 }
