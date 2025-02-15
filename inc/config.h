@@ -1,4 +1,5 @@
 #pragma once
+#define TINYOBJLOADER_IMPLEMENTATION
 
 #include <iostream>
 #include <glad/glad.h>
@@ -7,7 +8,11 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <vector>
+#include <string>
 
+#include "tiny_obj_loader.h"
 #include "entity.h"
+
 
 void readShaders(const char* vertexPath, const char* fragmentPath,unsigned int& Shaderprogram);
