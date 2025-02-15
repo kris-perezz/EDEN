@@ -7,10 +7,12 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
 add_executable(EDEN 
-    src/config.h 
+    inc/config.h
+    inc/entity.h
+    src/entity.cpp
     src/main.cpp 
     src/glad.c)
 
-target_include_directories(EDEN PRIVATE dependencies)
+target_include_directories(EDEN PRIVATE dependencies inc)
 
 target_link_libraries(EDEN ${GLFW3_LIBRARY} OpenGL::GL)
