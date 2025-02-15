@@ -64,17 +64,7 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Compiler/Clang-C.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Compiler/Clang.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+			"path" : "/usr/share/cmake/Modules/Compiler/GNU-C.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -85,11 +75,6 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Platform/Linux-Clang-C.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -154,17 +139,12 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Compiler/Clang-CXX.cmake"
+			"path" : "/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Compiler/Clang.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake/Modules/Platform/Linux-Clang-CXX.cmake"
+			"path" : "/usr/share/cmake/Modules/Compiler/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
