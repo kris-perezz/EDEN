@@ -7,7 +7,9 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
 add_executable(EDEN 
-    inc/config.h 
+    inc/config.h
+    inc/entity.h
+    src/entity.cpp
     src/main.cpp 
     src/glad.c)
 

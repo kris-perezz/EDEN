@@ -1,5 +1,7 @@
 #include "config.h"
 
+#include <iostream>
+
 int main() {
     
     GLFWwindow* window;
@@ -28,9 +30,22 @@ int main() {
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f,
         0.0f,  0.5f, 0.0f
-    };  
+    };
 
-    entity triangle(std::vector<float>(vertices));
+    auto list = std::vector<glm::vec3>();
+    auto vecVerts = std::vector<float>();
+
+    //glm::vec3(vertices[i],vertices[i+1],vertices[i+2])
+
+    //hardcoding 3 verts for trioangle for now
+    for(int i = 0; i < sizeof(vertices)/sizeof(vertices[0]); i++) {
+        //list.push_back({vertices[i],vertices[i+1],vertices[i+2]});
+        vecVerts.push_back(vertices[i]);
+    }
+    
+
+    entity triangle( vecVerts );
+    std::cout << "Size: " << triangle.getVertCount();
 
 
     unsigned int VBO;
@@ -38,7 +53,7 @@ int main() {
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);  
 
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(triangle.getVertices()[0]) * triangle.getVertCount(), triangle.getVertices(), GL_STATIC_DRAW);
     
     unsigned int shaderProgram;
     readShaders("./shaders/shader.vert","./shaders/shader.frag", shaderProgram);
@@ -49,7 +64,7 @@ int main() {
 
     // 0. copy our vertices array in a buffer for OpenGL to use
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(triangle.getVertices()[0]) * triangle.getVertCount(), triangle.getVertices(), GL_STATIC_DRAW);
     // 1. then set the vertex attributes pointers
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);  
@@ -68,7 +83,7 @@ int main() {
     glBindVertexArray(VAO);
     // 2. copy our vertices array in a buffer for OpenGL to use
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(triangle.getVertices()[0]) * triangle.getVertCount(), triangle.getVertices(), GL_STATIC_DRAW);
     // 3. then set our vertex attributes pointers
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);  

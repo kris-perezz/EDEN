@@ -9,30 +9,20 @@
 class entity {
 
     private:
-        std::vector<glm::vec3> verts;
-        int triCount;
+        std::vector<float> verts;
+        int vertCount;
 
     public:
         entity();
-        entity(std::vector<glm::vec3>);
+        entity(std::vector<float>);
         entity(entity&);
-        glm::vec3& operator[](const int index);
+        float& operator[](const int index);
 
-        void translateEntity(glm::vec4);
-        void rotateEntityX(float);
-        void scaleEntity(glm::vec4);
-        void rotateEntityY(float);
-        void rotateEntityZ(float);
-
-        void setTriCount(int);
-        int getTriCount();
+        void setVertCount(int);
+        int getVertCount();
         void loadObj(std::string);
 
-        glm::vec3* getVertices();
-        void depthTest(int WIDTH,int HEIGHT,int &count, u_int32_t* frameBuffer, float* depthBuffer,std::vector<float> facingRatios);
-        void applyWave();
-
-
+        float* getVertices();
 
 
 };

@@ -9,5 +9,6 @@
 #include <iostream>
 
 #include "entity.h"
+#include "tiny_obj_loader.h"
 
 void readShaders(const char* vertexPath, const char* fragmentPath,unsigned int& Shaderprogram);
