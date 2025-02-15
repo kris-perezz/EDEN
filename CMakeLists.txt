@@ -6,11 +6,26 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
+set(IMGUI_SOURCE ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/imgui)
+
+# Add ImGui source files
+set(IMGUI_SOURCES
+    dependencies/imgui/imgui.cpp
+    dependencies/imgui/imgui_demo.cpp
+    dependencies/imgui/imgui_draw.cpp
+    dependencies/imgui/imgui_widgets.cpp
+    dependencies/imgui/imgui_impl_opengl3.cpp
+    dependencies/imgui/imgui_impl_glfw.cpp
+    dependencies/imgui/imgui_tables.cpp
+)
+
 add_executable(EDEN 
     src/config.h 
     src/main.cpp 
-    src/glad.c)
+    src/glad.c
+    ${IMGUI_SOURCES}
+)
 
 target_include_directories(EDEN PRIVATE dependencies)
 
-target_link_libraries(EDEN ${GLFW3_LIBRARY} OpenGL::GL)
+target_link_libraries(EDEN ${GLFW3_LIBRARY} OpenGL::GL glfw)

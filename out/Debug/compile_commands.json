@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/main.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/src/main.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/cc  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/kennek/Documents/code/cpp/EDEN/src/glad.c",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/src/glad.c",
+  "output": "CMakeFiles/EDEN.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_demo.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_demo.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_demo.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_draw.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_widgets.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_opengl3.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_glfw.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_tables.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o"
+}
+]
