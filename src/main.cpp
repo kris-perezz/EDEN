@@ -1,5 +1,7 @@
 #include "config.h"
+
 #include <glm/gtc/type_ptr.hpp>
+#include <chrono>
 
 int main() {
     
@@ -57,6 +59,14 @@ int main() {
             objIndices.push_back(static_cast<unsigned int>(i));
         }
     }
+    
+    
+    //entity importedModel(objVertices,objIndices);
+    
+    
+    //std::cout << "Size: " << importedModel.getVertCount();
+    
+
     // --- End of OBJ loading modifications ---
 
     unsigned int VBO, EBO, VAO;
@@ -76,7 +86,7 @@ int main() {
     
     // Bind and fill EBO with OBJ index data
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, objIndices.size() * sizeof(unsigned int), objIndices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, objIndices.size() * sizeof(unsigned int),  objIndices.data(), GL_STATIC_DRAW);
 
     // Set vertex attribute pointers (location 0 expects a vec3 position)
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
@@ -113,10 +123,22 @@ int main() {
     glBindBufferBase(GL_UNIFORM_BUFFER, 0, uboMatrices);
 
 
+    auto viewerObject = Entity::createEntity();
+    KeyboardMovementController cameraController{};
+    auto currentTime = std::chrono::high_resolution_clock::now();
+
 
     while (!glfwWindowShouldClose(window)) {
 
         glfwPollEvents();
+
+        auto newTime = std::chrono::high_resolution_clock::now();
+        float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
+        currentTime = newTime;
+
+
+        cameraController.moveInPlaneXZ(window,frameTime,viewerObject);
+        camera.setViewYXZ(viewerObject.transform.translation, viewerObject.transform.rotation);
 
         // Update camera uniforms each frame (if the camera is moving, update accordingly)
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));

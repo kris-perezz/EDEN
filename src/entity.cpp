@@ -1,30 +1,65 @@
 #include "entity.h"
 
+#define TINYOBJLOADER_IMPLEMENTATION
+#include "tiny_obj_loader.h"
+
 entity::entity() {
-    this->triCount = verts.size();
+    this->vertCount = verts.size();
 
 }
 
-entity::entity(std::vector<glm::vec3> verts) {
+entity::entity(std::vector<float> verts) {
     this->verts = verts;
-    this->triCount = verts.size();
+    this->vertCount = verts.size();
+}
+
+entity::entity(std::vector<float> verts, std::vector<unsigned int> indicies) {
+    this->verts = verts;
+    this->indicies = indicies;
+    this->vertCount = verts.size();
+    this->indexCount = indicies.size();
+    
 }
 
 entity::entity(entity &copy) {
-    this->triCount = copy.getTriCount();
-    //glm::vec3 newTris[triCount];
+    this->vertCount = copy.getVertCount();
+    //glm::vec3 newverts[vertCount];
     //std::vector<glm::vec3> newVec;
     //this->verts = newVec;
 
-    for(int i = 0; i < this->triCount; i++ ) {
+    for(int i = 0; i < this->vertCount; i++ ) {
         this->verts.push_back( copy[i]);
     }
 }
 
-glm::vec3& entity::operator[](const int index) {
+float& entity::operator[](const int index) {
     return this->verts[index];
 }
 
-glm::vec3* entity::getVertices() {
+float* entity::getVertices() {
     return this->verts.data();
+}
+
+unsigned int* entity::getIndices() {
+    return this->indicies.data();
+}
+
+
+int entity::getVertCount() {
+    return this->vertCount;
+}
+
+int entity::getIndexCount() {
+    return this->indexCount;
+}
+
+
+
+Entity Entity::createEntity() {
+    static id_t currentId = 0;
+    return Entity{currentId++};
+}
+
+Entity::Entity(id_t objectId) : id{objectId} {
+
 }

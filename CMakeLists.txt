@@ -11,7 +11,11 @@ add_executable(EDEN
     inc/camera.h
     src/camera.cpp
     src/main.cpp
-    src/glad.c)
+    src/glad.c
+    inc/keyboard.h
+    src/keyboard.cpp
+    inc/entity.h
+    src/entity.cpp)
 
 target_include_directories(EDEN PRIVATE dependencies inc)
 

@@ -1,5 +1,4 @@
 #pragma once
-#define TINYOBJLOADER_IMPLEMENTATION
 
 #include <iostream>
 #include <glad/glad.h>
@@ -11,9 +10,11 @@
 #include <vector>
 #include <string>
 
-#include "tiny_obj_loader.h"
 #include "entity.h"
 #include "camera.h"
+
+#include "keyboard.h"
+#include "tiny_obj_loader.h"
 
 
 
