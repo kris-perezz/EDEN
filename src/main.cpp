@@ -23,12 +23,15 @@ int main() {
 
     //Testing with rendering tri
 
-
+    // work on importing models later
     float vertices[] = {
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f,
         0.0f,  0.5f, 0.0f
     };  
+
+    entity triangle(std::vector<float>(vertices));
+
 
     unsigned int VBO;
     glGenBuffers(1, &VBO); 
