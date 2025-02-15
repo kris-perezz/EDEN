@@ -1,4 +1,4 @@
-#include "Camera.h"
+#include "camera.h"
 
 const glm::mat4& Camera::getProjection() const {
     return projectionMatrix;

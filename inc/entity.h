@@ -6,6 +6,8 @@
 #include <vector>
 #include <glm/glm.hpp>
 
+#include "camera.h"
+
 class entity {
 
     private:
