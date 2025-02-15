@@ -8,7 +8,9 @@ find_package(glfw3 REQUIRED)
 
 add_executable(EDEN 
     inc/config.h 
-    src/main.cpp 
+    inc/camera.h
+    src/camera.cpp
+    src/main.cpp
     src/glad.c)
 
 target_include_directories(EDEN PRIVATE dependencies inc)

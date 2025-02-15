@@ -1,4 +1,5 @@
 #include "config.h"
+#include <glm/gtc/type_ptr.hpp>
 
 int main() {
     
@@ -87,10 +88,25 @@ int main() {
     glUseProgram(shaderProgram);
     glBindVertexArray(VAO);
 
+    // --- Camera Setup ---
+    Camera camera;
+    // Configure perspective projection: 45° FOV, correct aspect, near and far clipping planes
+    camera.setPerspectiveProjection(glm::radians(45.0f), 640.0f / 480.0f, 0.1f, 100.0f);
+    // Set view: camera positioned at (0,0,3) looking at the origin
+    camera.setViewTarget(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+
+    // Get uniform locations from your shader
+    unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
+    unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
+
 
     while (!glfwWindowShouldClose(window)) {
 
         glfwPollEvents();
+
+        // Update camera uniforms each frame (if the camera is moving, update accordingly)
+        glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
+        glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection())); 
 
         glClear(GL_COLOR_BUFFER_BIT);
         glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(objIndices.size()), GL_UNSIGNED_INT, 0);
