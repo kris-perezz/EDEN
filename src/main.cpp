@@ -100,6 +100,20 @@ int main() {
     unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
 
 
+    //binding uniform buffers
+    unsigned int uboMatrices;
+    glGenBuffers(1, &uboMatrices);
+    glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+    glBufferData(GL_UNIFORM_BUFFER, 2 * sizeof(glm::mat4), NULL, GL_DYNAMIC_DRAW);
+    glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+    unsigned int blockIndex = glGetUniformBlockIndex(shaderProgram, "Matrices");
+    glUniformBlockBinding(shaderProgram, blockIndex, 0);
+
+    glBindBufferBase(GL_UNIFORM_BUFFER, 0, uboMatrices);
+
+
+
     while (!glfwWindowShouldClose(window)) {
 
         glfwPollEvents();
@@ -107,6 +121,12 @@ int main() {
         // Update camera uniforms each frame (if the camera is moving, update accordingly)
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection())); 
+
+        glBindBuffer(GL_UNIFORM_BUFFER, uboMatrices);
+        glBufferSubData(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4), glm::value_ptr(camera.getProjection()));
+        glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(camera.getViewMat()));
+        glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
 
         glClear(GL_COLOR_BUFFER_BIT);
         glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(objIndices.size()), GL_UNSIGNED_INT, 0);
