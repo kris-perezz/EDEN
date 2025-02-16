@@ -1,14 +1,20 @@
 [
 {
-  "directory": "/home/krizpe/Documents/EDEN/build",
-  "command": "/sbin/clang++ -I/home/krizpe/Documents/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /home/krizpe/Documents/EDEN/src/main.cpp",
-  "file": "/home/krizpe/Documents/EDEN/src/main.cpp",
+  "directory": "/Users/kylenicholls/Documents/GitHub/EDEN/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/opt/homebrew/include -I/Users/kylenicholls/Documents/GitHub/EDEN/dependencies -I/Users/kylenicholls/Documents/GitHub/EDEN/inc -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -o CMakeFiles/EDEN.dir/src/entity.cpp.o -c /Users/kylenicholls/Documents/GitHub/EDEN/src/entity.cpp",
+  "file": "/Users/kylenicholls/Documents/GitHub/EDEN/src/entity.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/entity.cpp.o"
+},
+{
+  "directory": "/Users/kylenicholls/Documents/GitHub/EDEN/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/opt/homebrew/include -I/Users/kylenicholls/Documents/GitHub/EDEN/dependencies -I/Users/kylenicholls/Documents/GitHub/EDEN/inc -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /Users/kylenicholls/Documents/GitHub/EDEN/src/main.cpp",
+  "file": "/Users/kylenicholls/Documents/GitHub/EDEN/src/main.cpp",
   "output": "CMakeFiles/EDEN.dir/src/main.cpp.o"
 },
 {
-  "directory": "/home/krizpe/Documents/EDEN/build",
-  "command": "/sbin/clang -I/home/krizpe/Documents/EDEN/dependencies -g -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/krizpe/Documents/EDEN/src/glad.c",
-  "file": "/home/krizpe/Documents/EDEN/src/glad.c",
+  "directory": "/Users/kylenicholls/Documents/GitHub/EDEN/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/opt/homebrew/include -I/Users/kylenicholls/Documents/GitHub/EDEN/dependencies -I/Users/kylenicholls/Documents/GitHub/EDEN/inc -iframework /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/System/Library/Frameworks -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -o CMakeFiles/EDEN.dir/src/glad.c.o -c /Users/kylenicholls/Documents/GitHub/EDEN/src/glad.c",
+  "file": "/Users/kylenicholls/Documents/GitHub/EDEN/src/glad.c",
   "output": "CMakeFiles/EDEN.dir/src/glad.c.o"
 }
 ]
