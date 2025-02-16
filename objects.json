@@ -1,5 +1,69 @@
 [
   {
+    "type": "Cube",
+    "position": [
+      10,
+      0,
+      10
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      1,
+      10
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      2,
+      10
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      3,
+      10
+    ]
+  },
+  {
+    "type": "SquarePyramid",
+    "position": [
+      10,
+      4,
+      10
+    ]
+  },
+  {
+    "type": "Plane",
+    "position": [
+      10,
+      0,
+      9
+    ]
+  },
+  {
+    "type": "Plane",
+    "position": [
+      10,
+      0,
+      8
+    ]
+  },
+  {
+    "type": "Plane",
+    "position": [
+      10,
+      0,
+      7
+    ]
+  },
+  {
     "type": "Cylinder",
     "position": [
       0,
@@ -32,7 +96,7 @@
     ]
   },
   {
-    "type": "Sphere",
+    "type": "Cylinder",
     "position": [
       0,
       4,
@@ -40,34 +104,10 @@
     ]
   },
   {
-    "type": "Cylinder",
-    "position": [
-      2,
-      0,
-      0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      2,
-      1,
-      0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      2,
-      2,
-      0
-    ]
-  },
-  {
     "type": "Sphere",
     "position": [
-      2,
-      3,
+      0,
+      5,
       0
     ]
   },
@@ -114,38 +154,6 @@
   {
     "type": "Cylinder",
     "position": [
-      0,
-      0,
-      2
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      0,
-      1,
-      2
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      0,
-      2,
-      2
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      0,
-      3,
-      2
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
       2,
       0,
       2
@@ -168,7 +176,7 @@
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Sphere",
     "position": [
       2,
       3,
@@ -178,377 +186,9 @@
   {
     "type": "Sphere",
     "position": [
-      2,
-      4,
-      2
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
       5,
-      0,
+      15,
       5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      1,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      2,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      3,
-      5
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      5,
-      4,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      0,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      1,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      2,
-      5
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      7,
-      3,
-      5
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      6,
-      0,
-      6
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      6,
-      1,
-      6
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      6,
-      2,
-      6
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      6,
-      3,
-      6
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      6,
-      4,
-      6
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      0,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      1,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
-      2,
-      7
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      5,
-      3,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      0,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      1,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      2,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      7,
-      3,
-      7
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      7,
-      4,
-      7
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      0,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      1,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      2,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      3,
-      10
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      10,
-      4,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      0,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      1,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      2,
-      10
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      12,
-      3,
-      10
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      11,
-      0,
-      11
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      11,
-      1,
-      11
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      11,
-      2,
-      11
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      11,
-      3,
-      11
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      11,
-      4,
-      11
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      0,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      1,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      10,
-      2,
-      12
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      10,
-      3,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      0,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      1,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      2,
-      12
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      12,
-      3,
-      12
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      12,
-      4,
-      12
     ]
   }
 ]
