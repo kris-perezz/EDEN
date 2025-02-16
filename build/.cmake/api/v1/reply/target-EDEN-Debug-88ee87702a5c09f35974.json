@@ -36,7 +36,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 18,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
@@ -64,7 +64,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 16,
+				"line" : 20,
 				"parent" : 0
 			}
 		]
@@ -93,7 +93,9 @@
 			"sourceIndexes" : 
 			[
 				2,
-				3
+				3,
+				6,
+				8
 			]
 		},
 		{
@@ -166,7 +168,9 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				5,
+				7
 			]
 		},
 		{
@@ -175,7 +179,9 @@
 			[
 				2,
 				3,
-				4
+				4,
+				6,
+				8
 			]
 		}
 	],
@@ -207,6 +213,28 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
 			"path" : "src/glad.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "inc/keyboard.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/keyboard.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "inc/entity.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/entity.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],
