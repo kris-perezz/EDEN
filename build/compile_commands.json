@@ -16,5 +16,17 @@
   "command": "/sbin/gcc -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/krizpe/Documents/EDEN/src/glad.c",
   "file": "/home/krizpe/Documents/EDEN/src/glad.c",
   "output": "CMakeFiles/EDEN.dir/src/glad.c.o"
+},
+{
+  "directory": "/home/krizpe/Documents/EDEN/build",
+  "command": "/sbin/g++ -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/keyboard.cpp.o -c /home/krizpe/Documents/EDEN/src/keyboard.cpp",
+  "file": "/home/krizpe/Documents/EDEN/src/keyboard.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/keyboard.cpp.o"
+},
+{
+  "directory": "/home/krizpe/Documents/EDEN/build",
+  "command": "/sbin/g++ -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/entity.cpp.o -c /home/krizpe/Documents/EDEN/src/entity.cpp",
+  "file": "/home/krizpe/Documents/EDEN/src/entity.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/entity.cpp.o"
 }
 ]
