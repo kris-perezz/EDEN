@@ -1,6 +1,7 @@
 #include "../inc/config.h"
 #include "imgui/imgui.h"
 
+#include <GLFW/glfw3.h>
 #include <chrono>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -16,6 +17,7 @@ int main() {
 
   window = glfwCreateWindow(640, 480, "My Window", NULL, NULL);
   glfwMakeContextCurrent(window);
+  glfwSwapInterval(0);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
     std::cout << "Couldn't load OpenGL" << std::endl;
@@ -154,14 +156,7 @@ int main() {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    edenTools.RenderFpsCounter();
-    /*edenTools.RenderFpsCounter(edenTools.getFrameTimes(),*/
-    /*                           edenTools.getMaxFrames());*/
-    /*edenTools.RenderPromptInput();*/
-
-    ImGui::Begin("Test");
-    ImGui::Text("This is a test window");
-    ImGui::End();
+    edenTools.RenderMenu();
 
     // if user refreshes the scene
     if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {

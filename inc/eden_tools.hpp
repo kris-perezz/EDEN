@@ -41,35 +41,6 @@ struct ScrollingBuffer {
   }
 };
 
-struct FrameRateBuffer {
-  int avgFps{0};
-  int capacity{60};
-  int currentSize{0};
-  float frames[60];
-
-  inline int getAvgFps() { return avgFps; }
-
-  inline void AddFrame(float frame) {
-    frames[currentSize] = frame;
-    currentSize++;
-  }
-
-  inline bool CanAddFrame() { return currentSize + 1 < capacity; }
-
-  // Clears buffer and returns the average of the buffer before it was cleared
-  void Flush() {
-    float avg = 0.0f;
-    // Get avg of frames
-    for (int i = 0; i < capacity; i++) {
-      avg += frames[i];
-      frames[i] = 0; // "Flushes" the current space
-    }
-
-    currentSize = 0; // Reset buffer
-    avgFps = (int)(avg / capacity);
-  }
-};
-
 class EdenTools {
 private:
   ImGuiIO &io;
@@ -88,6 +59,7 @@ public:
   // Setters
 
   // Render Tool Windows
+  void RenderMenu();
   void RenderFpsCounter();
   void RenderPromptInput() const;
 };
