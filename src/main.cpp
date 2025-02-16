@@ -179,6 +179,16 @@ int main() {
 
         glfwPollEvents();
 
+
+        //if user refreshes the scene
+        if(glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
+            std::cout << "Refreshing Scene.\n";
+
+            // Reload the OBJ file (update the path accordingly)
+            //bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "obj/landscape.obj");
+            loadObject();//specifically load landscape.obj file
+        }
+
         auto newTime = std::chrono::high_resolution_clock::now();
         float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
         currentTime = newTime;
@@ -300,5 +310,78 @@ void readShaders(const char* vertexPath, const char* fragmentPath, unsigned int&
     glDeleteShader(vertex);
     glDeleteShader(fragment);
     shProgram=ID;
+
+}
+
+void loadObject( ) {
+  
+    // --- Minimal modifications to load an OBJ model ---
+    // Replace the hard-coded triangle with OBJ data
+    std::vector<float> objVertices;
+    std::vector<unsigned int> objIndices;
+    tinyobj::attrib_t attrib;
+    std::vector<tinyobj::shape_t> shapes;
+    std::vector<tinyobj::material_t> materials;
+    std::string warn, err;
+    
+    // Load the OBJ file (update the path accordingly)
+    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "obj/landscape.obj");
+    if (!warn.empty()) {
+        std::cout << "WARN: " << warn << std::endl;
+    }
+    if (!err.empty()) {
+        std::cerr << err << std::endl;
+    }
+    if (!ret) {
+        std::cerr << "Failed to load OBJ file" << std::endl;
+        
+        //TODO: actually handle potentia lerror
+        //return -1;
+    }
+    
+    // For each shape and each index, extract the vertex positions.
+    for (size_t s = 0; s < shapes.size(); s++) {
+        for (size_t i = 0; i < shapes[s].mesh.indices.size(); i++) {
+            tinyobj::index_t idx = shapes[s].mesh.indices[i];
+            // Assuming the OBJ file has positions only (x, y, z)
+            objVertices.push_back(attrib.vertices[3 * idx.vertex_index + 0]);
+            objVertices.push_back(attrib.vertices[3 * idx.vertex_index + 1]);
+            objVertices.push_back(attrib.vertices[3 * idx.vertex_index + 2]);
+            // Build a sequential index array
+            objIndices.push_back(static_cast<unsigned int>(i));
+        }
+    }
+    
+    
+    //entity importedModel(objVertices,objIndices);
+    
+    
+    //std::cout << "Size: " << importedModel.getVertCount();
+    
+
+    // --- End of OBJ loading modifications ---
+
+    unsigned int VBO, EBO, VAO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO); 
+    glGenBuffers(1, &EBO);
+
+    // Bind VAO
+    glBindVertexArray(VAO);
+
+
+    // Bind and fill VBO with OBJ vertex data
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);  
+
+    glBufferData(GL_ARRAY_BUFFER, objVertices.size() * sizeof(float), objVertices.data(), GL_STATIC_DRAW);
+    
+    // Bind and fill EBO with OBJ index data
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, objIndices.size() * sizeof(unsigned int),  objIndices.data(), GL_STATIC_DRAW);
+
+    // Set vertex attribute pointers (location 0 expects a vec3 position)
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);  
 
 }

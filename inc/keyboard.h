@@ -19,6 +19,8 @@ class KeyboardMovementController {
         int lookRight = GLFW_KEY_D;
         int lookUp = GLFW_KEY_W;
         int lookDown = GLFW_KEY_S;
+
+        int refresh = GLFW_KEY_R;//refresh button to reload scene
     };
 
     void moveInPlaneXZ(GLFWwindow* window, float dt, Entity& Object);
