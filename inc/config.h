@@ -19,3 +19,4 @@
 
 
 void readShaders(const char* vertexPath, const char* fragmentPath,unsigned int& Shaderprogram);
+void loadObject( );
