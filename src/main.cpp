@@ -2,6 +2,21 @@
 
 #include <glm/gtc/type_ptr.hpp>
 #include <chrono>
+#include <thread>
+
+
+// ✅ Define `useNormalShader` globally
+bool useNormalShader = false; 
+unsigned int shaderProgram; 
+unsigned int normalShaderProgram; 
+
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_N && action == GLFW_PRESS) {
+        useNormalShader = !useNormalShader;  // ✅ No extern needed
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // ✅ Add slight delay
+    }
+}
 
 int main() {
     
@@ -41,17 +56,21 @@ int main() {
 
     glBindVertexArray(VAO);
 
-    // Shader setup
-    unsigned int shaderProgram;
-    readShaders("shaders/shader.vert", "shaders/shader.frag", shaderProgram);
-    glUseProgram(shaderProgram);
+    // ✅ Load the regular shader
+    readShaders("./shaders/shader.vert", "./shaders/shader.frag", shaderProgram);
+
+    // ✅ Load the normal visualization shader
+    readShaders("./shaders/shader.vert", "./shaders/normal_view.frag", normalShaderProgram);
+
+
+    glfwSetKeyCallback(window, keyCallback);
 
     // --- Camera Setup ---
     Camera camera;
     // Configure perspective projection: 45° FOV, correct aspect, near and far clipping planes
     camera.setPerspectiveProjection(glm::radians(45.0f), 640.0f / 480.0f, 0.1f, 100.0f);
     // Set view: camera positioned at (0,0,3) looking at the origin
-    camera.setViewTarget(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+    camera.setViewTarget(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f));
 
     // Get uniform locations from your shader
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
@@ -80,6 +99,10 @@ int main() {
     auto currentTime = std::chrono::high_resolution_clock::now();
 
 
+   if (shaderProgram == 0 || normalShaderProgram == 0) {
+    std::cerr << "❌ ERROR: Shader failed to load!" << std::endl;
+}
+
     while (!glfwWindowShouldClose(window)) {
 
         glfwPollEvents();
@@ -94,10 +117,10 @@ int main() {
         float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
         currentTime = newTime;
         
-        std::cout << "📷 Camera Position: " 
-            << viewerObject.transform.translation.x << ", " 
-            << viewerObject.transform.translation.y << ", " 
-            << viewerObject.transform.translation.z << std::endl;
+        //std::cout << "📷 Camera Position: " 
+            //<< viewerObject.transform.translation.x << ", " 
+            //<< viewerObject.transform.translation.y << ", " 
+           // << viewerObject.transform.translation.z << std::endl;
     
         // Move the camera
         cameraController.moveInPlaneXZ(window, frameTime, viewerObject);
@@ -112,11 +135,8 @@ int main() {
             sin(timeValue) * radius   // Z coordinate (rotates around Y-axis)
         );
     
-        // ✅ Ensure we're using the shader program before setting uniforms
-        glUseProgram(shaderProgram);
-        
         glm::vec3 lightColor = glm::vec3(2.0f, 2.0f, 2.0f); // Increase brightness
-    glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), lightColor.x, lightColor.y, lightColor.z);
+        glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), lightColor.x, lightColor.y, lightColor.z);
 
         // Pass updated light position to the shader
         glUniform3f(glGetUniformLocation(shaderProgram, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
@@ -133,17 +153,19 @@ int main() {
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
         
-        std::cout << "💡 Light Position: " 
-          << lightPos.x << ", " 
-          << lightPos.y << ", " 
-          << lightPos.z << std::endl;
+        //std::cout << "💡 Light Position: " 
+          //<< lightPos.x << ", " 
+          //<< lightPos.y << ", " 
+          //<< lightPos.z << std::endl;
 
         // Clear buffers and draw scene
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBindVertexArray(VAO);
-    
+        
+
         for (auto& entity : sceneObjects) {
-            glUseProgram(shaderProgram);
+            glUseProgram(useNormalShader ? normalShaderProgram : shaderProgram);
+            
             glm::mat4 model = entity.transform.mat4();
             glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
     

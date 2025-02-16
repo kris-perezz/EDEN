@@ -1,11 +1,11 @@
 [
     {
-      "type": "Plane",
+      "type": "Cube",
       "position": [0, 0, 0]
     },
     {
       "type": "Cube",
-      "position": [0, 5, 5]
+      "position": [0, 2, 2]
     }
   ]
   
