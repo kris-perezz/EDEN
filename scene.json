@@ -1,11 +1,353 @@
 [
-    {
-      "type": "Cube",
-      "position": [0, 0, 0]
-    },
-    {
-      "type": "Cube",
-      "position": [0, 2, 2]
-    }
-  ]
-  
+  {
+    "type": "squarePyramid",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      2,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      4,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      6,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      8,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      10,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      12,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      14,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      16,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      18,
+      0,
+      0
+    ],
+    "colour": [
+      0.5,
+      0.35,
+      0.05
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      0,
+      10
+    ],
+    "colour": [
+      0.7,
+      0.2,
+      0.2
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      1,
+      10
+    ],
+    "colour": [
+      0.7,
+      0.2,
+      0.2
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      2,
+      10
+    ],
+    "colour": [
+      0.7,
+      0.2,
+      0.2
+    ]
+  },
+  {
+    "type": "Cube",
+    "position": [
+      10,
+      3,
+      10
+    ],
+    "colour": [
+      0.7,
+      0.2,
+      0.2
+    ]
+  },
+  {
+    "type": "squarePyramid",
+    "position": [
+      10,
+      4,
+      10
+    ],
+    "colour": [
+      0.5,
+      0.25,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      5,
+      0,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      5,
+      1,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      5,
+      2,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      5,
+      3,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cone",
+    "position": [
+      5,
+      4,
+      15
+    ],
+    "colour": [
+      0.0,
+      0.5,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      15,
+      0,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      15,
+      1,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      15,
+      2,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      15,
+      3,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Cylinder",
+    "position": [
+      15,
+      4,
+      15
+    ],
+    "colour": [
+      0.4,
+      0.2,
+      0.0
+    ]
+  },
+  {
+    "type": "Sphere",
+    "position": [
+      15,
+      5,
+      15
+    ],
+    "colour": [
+      0.0,
+      0.5,
+      0.0
+    ]
+  },
+  {
+    "type": "Sphere",
+    "position": [
+      18,
+      18,
+      18
+    ],
+    "colour": [
+      1.0,
+      1.0,
+      0.0
+    ]
+  }
+]

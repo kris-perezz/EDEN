@@ -29,27 +29,31 @@ std::vector<Entity> SceneLoader::loadScene(const std::string& filename) {
             obj["position"][2]
         );
 
-        // Construct the expected file path
         std::string modelPath = "obj/" + type + ".obj";  
 
-        // ✅ **Check if the OBJ file exists**
         if (!fs::exists(modelPath)) {
             std::cerr << "⚠️ Warning: OBJ file not found for type '" << type 
                       << "' at path: " << modelPath << std::endl;
-            continue;  // Skip this object and continue loading the rest
+            continue;
         }
 
-        // Create an entity
         Entity newEntity = Entity::createEntity();
         newEntity.loadObj(modelPath);
-        newEntity.transform.scale = glm::vec3(2.0f, 2.0f, 2.0f); // Make objects larger for visibility
         newEntity.transform.translation = position;
+
+        // ✅ Load color if it exists
+        if (obj.contains("colour")) {
+            newEntity.setColour(obj["colour"][0], obj["colour"][1], obj["colour"][2]);
+        } else {
+            newEntity.setColour(1.0f, 1.0f, 1.0f); // ✅ Default to white if missing
+        }
 
         entities.push_back(std::move(newEntity));
 
         std::cout << "🟢 Loaded entity: " << type 
-          << " at position (" << position.x << ", " << position.y << ", " << position.z << ")\n";
-
+          << " at position (" << position.x << ", " << position.y << ", " << position.z 
+          << ") with color (" << newEntity.getColour().r << ", " << newEntity.getColour().g 
+          << ", " << newEntity.getColour().b << ")\n";
     }
 
     return entities;

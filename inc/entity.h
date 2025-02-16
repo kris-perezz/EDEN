@@ -96,13 +96,16 @@ class Entity {
     public:
         using id_t = unsigned int;
     
-        glm::vec3 color{};
+        glm::vec3 colour;  // ✅ New field to store RGB color
         TransformComponent transform{};
     
         static Entity createEntity();
         id_t getId() { return id; }
     
         void loadObj(std::string path);  // Move `loadObj()` here
+
+        void setColour(float r, float g, float b) { colour = glm::vec3(r, g, b); }  // ✅ Set color
+        glm::vec3 getColour() const { return colour; }  // ✅ Get col
     
         Entity(const Entity &) = delete;
         Entity &operator=(const Entity &) = delete;
