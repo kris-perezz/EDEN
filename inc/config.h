@@ -1,22 +1,20 @@
 #pragma once
 
-#include <iostream>
-#include <glad/glad.h>
+#include "../dependencies/glad/glad.h"
 #include <GLFW/glfw3.h>
-#include <string>
 #include <fstream>
-#include <sstream>
 #include <iostream>
-#include <vector>
+#include <sstream>
 #include <string>
+#include <vector>
 
-#include "entity.h"
 #include "camera.h"
+#include "entity.h"
 
+#include "eden_tools.hpp"
 #include "keyboard.h"
 #include "tiny_obj_loader.h"
 
-
-
-void readShaders(const char* vertexPath, const char* fragmentPath,unsigned int& Shaderprogram);
-void loadObject( );
+void readShaders(const char *vertexPath, const char *fragmentPath,
+                 unsigned int &Shaderprogram);
+void loadObject();
