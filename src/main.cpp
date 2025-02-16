@@ -80,75 +80,79 @@ int main() {
     auto currentTime = std::chrono::high_resolution_clock::now();
 
 
-
     while (!glfwWindowShouldClose(window)) {
 
         glfwPollEvents();
-
-
-        //if user refreshes the scene
-        if(glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
+    
+        // If user refreshes the scene
+        if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
             std::cout << "Refreshing Scene.\n";
-
-            // Reload the OBJ file (update the path accordingly)
-            //bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "obj/landscape.obj");
-            loadObject();//specifically load landscape.obj file
+            loadObject(); // Reload landscape.obj file
         }
-
+    
         auto newTime = std::chrono::high_resolution_clock::now();
         float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
         currentTime = newTime;
+        
         std::cout << "📷 Camera Position: " 
-          << viewerObject.transform.translation.x << ", " 
-          << viewerObject.transform.translation.y << ", " 
-          << viewerObject.transform.translation.z << std::endl;
-
-
-        cameraController.moveInPlaneXZ(window,frameTime,viewerObject);
+            << viewerObject.transform.translation.x << ", " 
+            << viewerObject.transform.translation.y << ", " 
+            << viewerObject.transform.translation.z << std::endl;
+    
+        // Move the camera
+        cameraController.moveInPlaneXZ(window, frameTime, viewerObject);
         camera.setViewYXZ(viewerObject.transform.translation, viewerObject.transform.rotation);
+    
+        // ✅ Make the light rotate around the origin (0,0,0)
+        float timeValue = glfwGetTime();
+        float radius = 8.0f; // Distance from the origin
+        glm::vec3 lightPos = glm::vec3(
+            cos(timeValue) * radius,  // X coordinate (rotates around Y-axis)
+            0.0f,                     // Fixed height (Y-coordinate)
+            sin(timeValue) * radius   // Z coordinate (rotates around Y-axis)
+        );
+    
+        // ✅ Ensure we're using the shader program before setting uniforms
+        glUseProgram(shaderProgram);
+        
+        glm::vec3 lightColor = glm::vec3(2.0f, 2.0f, 2.0f); // Increase brightness
+    glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), lightColor.x, lightColor.y, lightColor.z);
 
-        // Get uniform locations
-        unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-        unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
-        unsigned int projLoc = glGetUniformLocation(shaderProgram, "projection");
-        unsigned int lightPosLoc = glGetUniformLocation(shaderProgram, "lightPos");
-        unsigned int viewPosLoc = glGetUniformLocation(shaderProgram, "viewPos");
-
-        // Set matrices
-        glm::mat4 model = glm::mat4(1.0f);
-        glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        // Pass updated light position to the shader
+        glUniform3f(glGetUniformLocation(shaderProgram, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+    
+        // Pass camera position to the shader
+        glm::vec3 cameraPos = viewerObject.transform.translation;
+        glUniform3f(glGetUniformLocation(shaderProgram, "viewPos"), cameraPos.x, cameraPos.y, cameraPos.z);
+    
+        // Set object color (modify per entity if needed)
+        glm::vec3 objectColor = glm::vec3(1.0f, 0.5f, 0.31f);
+        glUniform3f(glGetUniformLocation(shaderProgram, "objectColor"), objectColor.x, objectColor.y, objectColor.z);
+        
+        // Pass matrices to shader
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
+        
+        std::cout << "💡 Light Position: " 
+          << lightPos.x << ", " 
+          << lightPos.y << ", " 
+          << lightPos.z << std::endl;
 
-        glm::vec3 lightColor = glm::vec3(2.0f, 2.0f, 2.0f); // Brighter light
-        glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), lightColor.x, lightColor.y, lightColor.z);
-
-        float timeValue = glfwGetTime();
-        glm::vec3 lightPos = glm::vec3(sin(timeValue) * 2.0f, 2.0f, cos(timeValue) * 2.0f);
-        glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
-
-
-        // Get camera position from `viewerObject.transform.translation`
-        glm::vec3 cameraPos = viewerObject.transform.translation;
-        glUniform3f(viewPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
-
+        // Clear buffers and draw scene
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBindVertexArray(VAO);
-        
-
-        // Render each entity
+    
         for (auto& entity : sceneObjects) {
+            glUseProgram(shaderProgram);
             glm::mat4 model = entity.transform.mat4();
-            unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
-            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-        
-            entity.draw();  // Call draw on each entity
+            glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(model));
+    
+            entity.draw();
         }
-
-
+    
         glfwSwapBuffers(window);
-
     }
+    
 
     glfwTerminate();
 

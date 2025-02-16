@@ -67,7 +67,7 @@ void Entity::loadObj(std::string path) {
     std::string warn, err;
 
     if (!tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, path.c_str())) {
-        std::cerr << "❌ Failed to load OBJ file: " << path << "\n" << err << std::endl;
+        std::cerr << "Failed to load OBJ file: " << path << "\n" << err << std::endl;
         return;
     }
 
@@ -75,22 +75,49 @@ void Entity::loadObj(std::string path) {
     indices.clear();
 
     for (const auto& shape : shapes) {
-        for (const auto& index : shape.mesh.indices) {
-            vertices.push_back(attrib.vertices[3 * index.vertex_index + 0]);
-            vertices.push_back(attrib.vertices[3 * index.vertex_index + 1]);
-            vertices.push_back(attrib.vertices[3 * index.vertex_index + 2]);
-            indices.push_back(static_cast<unsigned int>(indices.size()));
+        for (size_t i = 0; i < shape.mesh.indices.size(); i += 3) {
+            tinyobj::index_t idx0 = shape.mesh.indices[i];
+            tinyobj::index_t idx1 = shape.mesh.indices[i + 1];
+            tinyobj::index_t idx2 = shape.mesh.indices[i + 2];
+
+            // Get vertex positions
+            glm::vec3 v0 = glm::vec3(
+                attrib.vertices[3 * idx0.vertex_index + 0],
+                attrib.vertices[3 * idx0.vertex_index + 1],
+                attrib.vertices[3 * idx0.vertex_index + 2]);
+
+            glm::vec3 v1 = glm::vec3(
+                attrib.vertices[3 * idx1.vertex_index + 0],
+                attrib.vertices[3 * idx1.vertex_index + 1],
+                attrib.vertices[3 * idx1.vertex_index + 2]);
+
+            glm::vec3 v2 = glm::vec3(
+                attrib.vertices[3 * idx2.vertex_index + 0],
+                attrib.vertices[3 * idx2.vertex_index + 1],
+                attrib.vertices[3 * idx2.vertex_index + 2]);
+
+            // Compute face normal
+            glm::vec3 edge1 = v1 - v0;
+            glm::vec3 edge2 = v2 - v0;
+            glm::vec3 normal = glm::normalize(glm::cross(edge1, edge2));
+
+            // Store interleaved position and normal
+            vertices.insert(vertices.end(), { v0.x, v0.y, v0.z, normal.x, normal.y, normal.z });
+            vertices.insert(vertices.end(), { v1.x, v1.y, v1.z, normal.x, normal.y, normal.z });
+            vertices.insert(vertices.end(), { v2.x, v2.y, v2.z, normal.x, normal.y, normal.z });
+
+            // Store indices
+            indices.push_back(indices.size());
+            indices.push_back(indices.size());
+            indices.push_back(indices.size());
         }
     }
-
-    std::cout << "🟢 Loaded " << vertices.size() / 3 << " vertices from " << path << std::endl;
 
     setupMesh();
 }
 
-
 void Entity::setupMesh() {
-    if (VAO != 0) return;  // Prevent multiple buffer creations
+    if (VAO != 0) return; // Prevent multiple buffer creations
 
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -104,8 +131,13 @@ void Entity::setupMesh() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    // Vertex Positions (location = 0)
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    // Vertex Normals (location = 1)
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     glBindVertexArray(0);
 }
