@@ -148,8 +148,8 @@ void Entity::draw() {
         return;
     }
 
-    std::cout << "🎨 Rendering entity with VAO: " << VAO 
-              << " and " << indices.size() << " indices.\n";
+    //std::cout << "🎨 Rendering entity with VAO: " << VAO 
+              //<< " and " << indices.size() << " indices.\n";
 
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(indices.size()), GL_UNSIGNED_INT, 0);
