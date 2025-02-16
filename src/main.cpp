@@ -21,6 +21,11 @@ int main() {
 		glfwTerminate();
 		return -1;
 	}
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);  // Cull back faces
+    glFrontFace(GL_CCW);  // Ensure counter-clockwise faces are front
+    glEnable(GL_DEPTH_TEST);
+
 
     glClearColor(0.5f, 0.1f, 0.75f, 1.0f);
 
@@ -75,7 +80,7 @@ int main() {
             // Compute face normal
             glm::vec3 edge1 = v1 - v0;
             glm::vec3 edge2 = v2 - v0;
-            glm::vec3 normal = glm::normalize(glm::cross(edge2, edge1));
+            glm::vec3 normal = glm::normalize(glm::cross(edge1, edge2));
 
             // Store vertices & normals interleaved (x, y, z, nx, ny, nz)
             objVertices.push_back(v0.x); objVertices.push_back(v0.y); objVertices.push_back(v0.z);
@@ -88,9 +93,10 @@ int main() {
             objVertices.push_back(normal.x); objVertices.push_back(normal.y); objVertices.push_back(normal.z);
 
             // Store triangle indices
-            objIndices.push_back(static_cast<unsigned int>(objIndices.size()));
-            objIndices.push_back(static_cast<unsigned int>(objIndices.size()));
-            objIndices.push_back(static_cast<unsigned int>(objIndices.size()));
+            objIndices.push_back(i);
+            objIndices.push_back(i + 1);
+            objIndices.push_back(i + 2);
+
         }
     }
 
@@ -202,7 +208,7 @@ int main() {
         glm::vec3 cameraPos = viewerObject.transform.translation;
         glUniform3f(viewPosLoc, cameraPos.x, cameraPos.y, cameraPos.z);
 
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(objIndices.size()), GL_UNSIGNED_INT, 0);
 
