@@ -35,7 +35,8 @@ BACKGROUND:
 When asked to put something in the background, the background indices should start at (0,0,19) and go to (19,0,19)
 
 TREES AND HOUSES:
-When asked to make a tree and/or a house use the dedicated Tree and House asset. Set the colour to [-1.0,-1.0,-1.0]
+When asked to make a tree and/or a house use the dedicated Tree and House asset. Set the Tree colour to [0.11,0.4,0.19]. 
+Set the House colour to [-1,-1,-1]
 
 MOUNTAIN:
 Make mountains out of squarePyramids they should all only be one high.
@@ -95,7 +96,7 @@ NEVER add anything extra to the output like ``` NEVER.
 """
 
 #user_message = sys.argv[1]
-user_message = "Please draw a landscape of a house with plenty of trees around it."
+user_message = "Please draw a landscape of a single house with a couple trees."
 
 completion = client.chat.completions.create(
   model="gpt-4o",
