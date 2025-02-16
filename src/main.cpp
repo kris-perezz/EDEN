@@ -35,7 +35,7 @@ int main() {
     std::string warn, err;
     
     // Load the OBJ file (update the path accordingly)
-    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "obj/cesar.obj");
+    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "/Users/kylenicholls/Documents/GitHub/EDEN/obj/landscape.obj");
     if (!warn.empty()) {
         std::cout << "WARN: " << warn << std::endl;
     }
