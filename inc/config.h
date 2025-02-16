@@ -9,12 +9,14 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <utility>
 
 #include "entity.h"
 #include "camera.h"
 
 #include "keyboard.h"
 #include "tiny_obj_loader.h"
+#include "scene_loader.h"
 
 
 

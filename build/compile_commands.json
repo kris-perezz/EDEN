@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/krizpe/Documents/EDEN/build",
+  "command": "/sbin/g++ -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/scene_loader.cpp.o -c /home/krizpe/Documents/EDEN/src/scene_loader.cpp",
+  "file": "/home/krizpe/Documents/EDEN/src/scene_loader.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o"
+},
+{
+  "directory": "/home/krizpe/Documents/EDEN/build",
   "command": "/sbin/g++ -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/camera.cpp.o -c /home/krizpe/Documents/EDEN/src/camera.cpp",
   "file": "/home/krizpe/Documents/EDEN/src/camera.cpp",
   "output": "CMakeFiles/EDEN.dir/src/camera.cpp.o"
