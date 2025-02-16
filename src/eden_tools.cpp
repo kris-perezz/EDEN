@@ -1,14 +1,9 @@
 #include "eden_tools.hpp"
 #include "imgui/imgui.h"
 #include "imgui/implot.h"
-#include <algorithm>
 #include <cstdlib>
 #include <cstring>
-#include <deque>
-#include <iostream>
-#include <string>
-#include <vector>
-//
+
 // Constructor
 EdenTools::EdenTools(ImGuiIO &eden_io) : io(eden_io) {};
 
@@ -64,7 +59,9 @@ void EdenTools::RenderPromptInput() const {
   ImGui::InputTextMultiline("##edenprompt", *this->promptBuffer, 300);
   if (ImGui::Button("Create Scene Data")) {
     char buffer[409];
-    const char command[] = "python ~/Documents/code/cpp/EDEN/api.py";
+    const char command[] =
+        "python ~/Documents/code/cpp/EDEN/api.py"; // PYTHON SCRIPT HERE IS
+                                                   // HARDCODED
     sprintf(buffer, "%s '%s'", command, *this->promptBuffer);
     system(buffer);
   }
