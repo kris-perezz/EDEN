@@ -16,7 +16,9 @@ add_executable(EDEN
     inc/keyboard.h
     src/keyboard.cpp
     inc/entity.h
-    src/entity.cpp)
+    src/entity.cpp
+    inc/scene.h
+    src/scene.cpp)
 
 target_include_directories(EDEN PRIVATE dependencies inc)
 
