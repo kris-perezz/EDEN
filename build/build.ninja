@@ -70,20 +70,6 @@ build CMakeFiles/EDEN.dir/src/glad.c.o: C_COMPILER__EDEN_unscanned_Debug /home/k
   OBJECT_DIR = CMakeFiles/EDEN.dir
   OBJECT_FILE_DIR = CMakeFiles/EDEN.dir/src
 
-build CMakeFiles/EDEN.dir/src/keyboard.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /home/krizpe/Documents/EDEN/src/keyboard.cpp || cmake_object_order_depends_target_EDEN
-  DEP_FILE = CMakeFiles/EDEN.dir/src/keyboard.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc
-  OBJECT_DIR = CMakeFiles/EDEN.dir
-  OBJECT_FILE_DIR = CMakeFiles/EDEN.dir/src
-
-build CMakeFiles/EDEN.dir/src/entity.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /home/krizpe/Documents/EDEN/src/entity.cpp || cmake_object_order_depends_target_EDEN
-  DEP_FILE = CMakeFiles/EDEN.dir/src/entity.cpp.o.d
-  FLAGS = -g
-  INCLUDES = -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc
-  OBJECT_DIR = CMakeFiles/EDEN.dir
-  OBJECT_FILE_DIR = CMakeFiles/EDEN.dir/src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target EDEN
@@ -92,7 +78,7 @@ build CMakeFiles/EDEN.dir/src/entity.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /
 #############################################
 # Link the executable EDEN
 
-build EDEN: CXX_EXECUTABLE_LINKER__EDEN_Debug CMakeFiles/EDEN.dir/src/camera.cpp.o CMakeFiles/EDEN.dir/src/main.cpp.o CMakeFiles/EDEN.dir/src/glad.c.o CMakeFiles/EDEN.dir/src/keyboard.cpp.o CMakeFiles/EDEN.dir/src/entity.cpp.o | /usr/lib/libglfw.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so
+build EDEN: CXX_EXECUTABLE_LINKER__EDEN_Debug CMakeFiles/EDEN.dir/src/camera.cpp.o CMakeFiles/EDEN.dir/src/main.cpp.o CMakeFiles/EDEN.dir/src/glad.c.o | /usr/lib/libglfw.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so
   DEP_FILE = CMakeFiles/EDEN.dir/link.d
   FLAGS = -g
   LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/EDEN.dir/link.d
