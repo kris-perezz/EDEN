@@ -2,6 +2,19 @@
   {
     "type": "Tree",
     "position": [
+      0,
+      0,
+      0
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree2",
+    "position": [
       2,
       0,
       2
@@ -13,141 +26,11 @@
     ]
   },
   {
-    "type": "Tree",
-    "position": [
-      5,
-      0,
-      3
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      8,
-      0,
-      1
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      11,
-      0,
-      4
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      14,
-      0,
-      2
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      3,
-      0,
-      6
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      6,
-      0,
-      5
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      9,
-      0,
-      7
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      12,
-      0,
-      6
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      15,
-      0,
-      5
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      1,
-      0,
-      10
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
+    "type": "Car",
     "position": [
       4,
       0,
-      12
+      2
     ],
     "colour": [
       0.11,
@@ -156,180 +39,11 @@
     ]
   },
   {
-    "type": "Tree",
-    "position": [
-      7,
-      0,
-      11
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      10,
-      0,
-      13
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      13,
-      0,
-      10
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      16,
-      0,
-      12
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      3,
-      0,
-      15
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      6,
-      0,
-      14
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      9,
-      0,
-      16
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      12,
-      0,
-      15
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      15,
-      0,
-      14
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
+    "type": "streetLamp",
     "position": [
       2,
       0,
-      18
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      5,
-      0,
-      17
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      8,
-      0,
-      19
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      11,
-      0,
-      18
-    ],
-    "colour": [
-      0.11,
-      0.4,
-      0.19
-    ]
-  },
-  {
-    "type": "Tree",
-    "position": [
-      14,
-      0,
-      17
+      4
     ],
     "colour": [
       0.11,
