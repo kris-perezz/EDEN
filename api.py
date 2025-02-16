@@ -17,11 +17,13 @@ You are in a 3D matrix with the coordinates (x,y,z). Each coordinate is an index
 You are in the positive quadrant and can only use positive numbers. The origin is (0,0,0)
 The dimensions of the matrix is 20x20x20
 You have to form the image with the basic objects: Cube, triangularPrism, Sphere, Cylinder, Cone, Plane, squarePyramid.
+There is also basic objects you will use when you are able to: Tree, House.
 In the final output the types should be written exactly as shown above.
 
 To form a full object in a matrix you can stack the primative objects on top, below or beside each other.
 
 For example placing a cube at (0,1,0) and placing a cone at (0,2,0) will put the cone on top of the cube.
+With every object generate a colour in the RBG 0.0 - 1.0 format.
 
 IMPORTANT:
 When trying to put a pyramid on top of a cube, the cubes can only be stacked on top of eachother, NEVER beside.
@@ -30,16 +32,13 @@ When the prompt asks for a lot of objects, do not make all of the objects all ne
 If the prompt says a singular object like just "House" only make a single "House"
 
 BACKGROUND:
-When asked to put something in the background, the background should be set along the x and z axis.
-The indices of the x and z coordinate of any object that is a part of the background can NEVER be greater than 2
-When deciding the positions of objects, set the background first.
-Valid background indices:
-(0,0,0),(1,3,1),(2,7,2)
-Invalid background indices:
-(3,0,1),(0,0,5),(7,4,1)
+When asked to put something in the background, the background indices should start at (0,0,19) and go to (19,0,19)
 
-HOUSES:
-When making a house, the house can only by one block wide and 3-4 cubes high
+TREES AND HOUSES:
+When asked to make a tree and/or a house use the dedicated Tree and House asset. Set the colour to [-1.0,-1.0,-1.0]
+
+MOUNTAIN:
+Make mountains out of squarePyramids they should all only be one high.
 
 ## **VARIANCE FOR REPEATED OBJECTS:**
 
@@ -55,13 +54,9 @@ for example: (15,0,6), (7,0,11), (18,0,4)
   - If `N` is **even**, add it to `H`  
   - Ensure `H` remains within reasonable bounds (e.g., 3 ≤ H ≤ 15).
 
-### **Trees**
-- Trees should have **variable trunk heights** and **random leaf sizes**:
-  - The **trunk (cylinder)** should be between **3 to 7** units tall.
-  - The **leaves (sphere/cone)** should be between **1 to 3** units tall.
 
 EXAMPLE OF VARIANCE OF POSITION AND HEIGHTS OF REPEATED OBJECTS:
-{"type": "Cylinder", "position": [3,0,3]},
+  {"type": "Cylinder", "position": [3,0,3]},
   {"type": "Cylinder", "position": [3,1,3]},
   {"type": "Cylinder", "position": [3,2,3]},
   {"type": "Cylinder", "position": [3,3,3]},
@@ -71,11 +66,11 @@ EXAMPLE OF VARIANCE OF POSITION AND HEIGHTS OF REPEATED OBJECTS:
   {"type": "Cylinder", "position": [7,1,4]},
   {"type": "Cylinder", "position": [7,2,4]},
   {"type": "Cylinder", "position": [7,3,4]},
-  {"type": "Sphere", "position": [7,4,4]},
+  {"type": "Cone", "position": [7,4,4]},
   {"type": "Cylinder", "position": [3,0,11]},
   {"type": "Cylinder", "position": [3,1,11]},
   {"type": "Cylinder", "position": [3,2,11]},
-  {"type": "Sphere", "position": [3,3,11]},
+  {"type": "Cone", "position": [3,3,11]},
   {"type": "Cylinder", "position": [15,0,8]},
   {"type": "Cylinder", "position": [15,1,8]},
   {"type": "Cylinder", "position": [15,2,8]},
@@ -89,8 +84,8 @@ This example provides good instruction on how to make these objects, when making
   
 EXPECTED OUTPUT FORMAT:
 [
-  {"type": "Cube", "position": [0,1,0]},
-  {"type": "Sphere", "position": [0,2,0]}
+  {"type": "Cube", "position": [0,1,0],"colour":[1.0,0.0,0.0]},
+  {"type": "Sphere", "position": [0,2,0],"colour":[1.0,0.0,0.0]}
 ]
 ....
 
@@ -100,7 +95,7 @@ NEVER add anything extra to the output like ``` NEVER.
 """
 
 #user_message = sys.argv[1]
-user_message = "Please draw a landscape of a single house with a driveway leading up to it, and trees behind it with the sun in the sky."
+user_message = "Please draw a landscape of a house with plenty of trees around it."
 
 completion = client.chat.completions.create(
   model="gpt-4o",
