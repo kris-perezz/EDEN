@@ -218,6 +218,18 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/lib/cmake/glm/glmConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/lib/cmake/glm/glmConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/lib/cmake/glm/glmConfig-release.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -210,9 +210,13 @@ int main() {
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
 
-        // Set light position (can be moved later if it's dynamic)
-        glm::vec3 lightPos = glm::vec3(2.0f, 2.0f, 2.0f);
+        glm::vec3 lightColor = glm::vec3(2.0f, 2.0f, 2.0f); // Brighter light
+        glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), lightColor.x, lightColor.y, lightColor.z);
+
+        float timeValue = glfwGetTime();
+        glm::vec3 lightPos = glm::vec3(sin(timeValue) * 2.0f, 2.0f, cos(timeValue) * 2.0f);
         glUniform3f(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+
 
         // Get camera position from `viewerObject.transform.translation`
         glm::vec3 cameraPos = viewerObject.transform.translation;
