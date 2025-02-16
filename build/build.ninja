@@ -49,6 +49,13 @@ cmake_ninja_workdir = /home/krizpe/Documents/EDEN/build/
 
 build cmake_object_order_depends_target_EDEN: phony || .
 
+build CMakeFiles/EDEN.dir/src/scene_loader.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /home/krizpe/Documents/EDEN/src/scene_loader.cpp || cmake_object_order_depends_target_EDEN
+  DEP_FILE = CMakeFiles/EDEN.dir/src/scene_loader.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I/home/krizpe/Documents/EDEN/dependencies -I/home/krizpe/Documents/EDEN/inc
+  OBJECT_DIR = CMakeFiles/EDEN.dir
+  OBJECT_FILE_DIR = CMakeFiles/EDEN.dir/src
+
 build CMakeFiles/EDEN.dir/src/camera.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /home/krizpe/Documents/EDEN/src/camera.cpp || cmake_object_order_depends_target_EDEN
   DEP_FILE = CMakeFiles/EDEN.dir/src/camera.cpp.o.d
   FLAGS = -g
@@ -92,7 +99,7 @@ build CMakeFiles/EDEN.dir/src/entity.cpp.o: CXX_COMPILER__EDEN_unscanned_Debug /
 #############################################
 # Link the executable EDEN
 
-build EDEN: CXX_EXECUTABLE_LINKER__EDEN_Debug CMakeFiles/EDEN.dir/src/camera.cpp.o CMakeFiles/EDEN.dir/src/main.cpp.o CMakeFiles/EDEN.dir/src/glad.c.o CMakeFiles/EDEN.dir/src/keyboard.cpp.o CMakeFiles/EDEN.dir/src/entity.cpp.o | /usr/lib/libglfw.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so
+build EDEN: CXX_EXECUTABLE_LINKER__EDEN_Debug CMakeFiles/EDEN.dir/src/scene_loader.cpp.o CMakeFiles/EDEN.dir/src/camera.cpp.o CMakeFiles/EDEN.dir/src/main.cpp.o CMakeFiles/EDEN.dir/src/glad.c.o CMakeFiles/EDEN.dir/src/keyboard.cpp.o CMakeFiles/EDEN.dir/src/entity.cpp.o | /usr/lib/libglfw.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so
   DEP_FILE = CMakeFiles/EDEN.dir/link.d
   FLAGS = -g
   LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/EDEN.dir/link.d

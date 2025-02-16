@@ -29,120 +29,22 @@ int main() {
 
     glClearColor(0.5f, 0.1f, 0.75f, 1.0f);
 
-    
-    // --- Minimal modifications to load an OBJ model ---
-    // Replace the hard-coded triangle with OBJ data
-    std::vector<float> objVertices;
-    std::vector<unsigned int> objIndices;
-    std::vector<glm::vec3> tempNormals;  // Stores normals per vertex
+    // Load scene from JSON
+    std::vector<Entity> sceneObjects = SceneLoader::loadScene("scene.json");
 
-    tinyobj::attrib_t attrib;
-    std::vector<tinyobj::shape_t> shapes;
-    std::vector<tinyobj::material_t> materials;
-    std::string warn, err;
-    
-    // Load the OBJ file (update the path accordingly)
-    bool ret = tinyobj::LoadObj(&attrib, &shapes, &materials, &warn, &err, "obj/cesar.obj");
-    if (!warn.empty()) {
-        std::cout << "WARN: " << warn << std::endl;
-    }
-    if (!err.empty()) {
-        std::cerr << err << std::endl;
-    }
-    if (!ret) {
-        std::cerr << "Failed to load OBJ file" << std::endl;
-        return -1;
-    }
 
-    // Extract vertex positions & compute normals simultaneously
-    for (size_t s = 0; s < shapes.size(); s++) {
-        for (size_t i = 0; i < shapes[s].mesh.indices.size(); i += 3) {  // Process in triangle batches
-            tinyobj::index_t idx0 = shapes[s].mesh.indices[i];
-            tinyobj::index_t idx1 = shapes[s].mesh.indices[i + 1];
-            tinyobj::index_t idx2 = shapes[s].mesh.indices[i + 2];
 
-            // Get vertex positions
-            glm::vec3 v0 = glm::vec3(
-                attrib.vertices[3 * idx0.vertex_index + 0],
-                attrib.vertices[3 * idx0.vertex_index + 1],
-                attrib.vertices[3 * idx0.vertex_index + 2]);
-
-            glm::vec3 v1 = glm::vec3(
-                attrib.vertices[3 * idx1.vertex_index + 0],
-                attrib.vertices[3 * idx1.vertex_index + 1],
-                attrib.vertices[3 * idx1.vertex_index + 2]);
-
-            glm::vec3 v2 = glm::vec3(
-                attrib.vertices[3 * idx2.vertex_index + 0],
-                attrib.vertices[3 * idx2.vertex_index + 1],
-                attrib.vertices[3 * idx2.vertex_index + 2]);
-
-            // Compute face normal
-            glm::vec3 edge1 = v1 - v0;
-            glm::vec3 edge2 = v2 - v0;
-            glm::vec3 normal = glm::normalize(glm::cross(edge1, edge2));
-
-            // Store vertices & normals interleaved (x, y, z, nx, ny, nz)
-            objVertices.push_back(v0.x); objVertices.push_back(v0.y); objVertices.push_back(v0.z);
-            objVertices.push_back(normal.x); objVertices.push_back(normal.y); objVertices.push_back(normal.z);
-            
-            objVertices.push_back(v1.x); objVertices.push_back(v1.y); objVertices.push_back(v1.z);
-            objVertices.push_back(normal.x); objVertices.push_back(normal.y); objVertices.push_back(normal.z);
-            
-            objVertices.push_back(v2.x); objVertices.push_back(v2.y); objVertices.push_back(v2.z);
-            objVertices.push_back(normal.x); objVertices.push_back(normal.y); objVertices.push_back(normal.z);
-
-            // Store triangle indices
-            objIndices.push_back(i);
-            objIndices.push_back(i + 1);
-            objIndices.push_back(i + 2);
-
-        }
-    }
-
-    std::cout << "Total vertices: " << objVertices.size() / 6 << "\n"; // Should be a multiple of 6
-
-    for (size_t i = 0; i < objVertices.size(); i += 6) {  // Iterate in steps of 6
-        std::cout << "Vertex " << (i / 6) << ": Pos("
-                << objVertices[i] << ", " << objVertices[i+1] << ", " << objVertices[i+2] 
-                << ") Normal(" << objVertices[i+3] << ", " << objVertices[i+4] << ", " << objVertices[i+5] 
-                << ")\n";
-
-        if (i >= 30) break; // Limit output to avoid spamming the console
-    }
-
-    
-
-    unsigned int VBO, EBO, VAO;
+    unsigned int VAO, VBO, EBO;
     glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO); 
+    glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
-    // Bind VAO
     glBindVertexArray(VAO);
 
-    // Bind and fill VBO with OBJ vertex data
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);  
-    glBufferData(GL_ARRAY_BUFFER, objVertices.size() * sizeof(float), objVertices.data(), GL_STATIC_DRAW);
-
-    // Bind and fill EBO with OBJ index data
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, objIndices.size() * sizeof(unsigned int),  objIndices.data(), GL_STATIC_DRAW);
-
-    
-    // Set vertex attribute pointers (location 0 expects a vec3 position)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);  // Position
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float))); // Normal
-    glEnableVertexAttribArray(1);
-
-
+    // Shader setup
     unsigned int shaderProgram;
-    readShaders("./shaders/shader.vert","./shaders/shader.frag", shaderProgram);
-
+    readShaders("shaders/shader.vert", "shaders/shader.frag", shaderProgram);
     glUseProgram(shaderProgram);
-    glBindVertexArray(VAO);
 
     // --- Camera Setup ---
     Camera camera;
@@ -168,8 +70,12 @@ int main() {
 
     glBindBufferBase(GL_UNIFORM_BUFFER, 0, uboMatrices);
 
+    // Create an actual object instead of an R-value
+    Entity viewerObject = Entity::createEntity();
 
-    auto viewerObject = Entity::createEntity();
+    // Ensure transform component exists
+    viewerObject.transform.translation = glm::vec3(0.0f, 0.0f, 0.0f);
+
     KeyboardMovementController cameraController{};
     auto currentTime = std::chrono::high_resolution_clock::now();
 
@@ -192,6 +98,10 @@ int main() {
         auto newTime = std::chrono::high_resolution_clock::now();
         float frameTime = std::chrono::duration<float, std::chrono::seconds::period>(newTime - currentTime).count();
         currentTime = newTime;
+        std::cout << "📷 Camera Position: " 
+          << viewerObject.transform.translation.x << ", " 
+          << viewerObject.transform.translation.y << ", " 
+          << viewerObject.transform.translation.z << std::endl;
 
 
         cameraController.moveInPlaneXZ(window,frameTime,viewerObject);
@@ -224,7 +134,17 @@ int main() {
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(objIndices.size()), GL_UNSIGNED_INT, 0);
+        
+
+        // Render each entity
+        for (auto& entity : sceneObjects) {
+            glm::mat4 model = entity.transform.mat4();
+            unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
+            glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+        
+            entity.draw();  // Call draw on each entity
+        }
+
 
         glfwSwapBuffers(window);
 
