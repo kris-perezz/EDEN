@@ -23,7 +23,7 @@ int main() {
 	}
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);  // Cull back faces
-    glFrontFace(GL_CCW);  // Ensure counter-clockwise faces are front
+    glFrontFace(GL_CW);  // Ensure counter-clockwise faces are front
     glEnable(GL_DEPTH_TEST);
 
 
