@@ -1,5 +1,8 @@
 #include "entity.h"
 
+#define TINYOBJLOADER_IMPLEMENTATION
+#include "tiny_obj_loader.h"
+
 entity::entity() {
     this->vertCount = verts.size();
 
@@ -8,6 +11,14 @@ entity::entity() {
 entity::entity(std::vector<float> verts) {
     this->verts = verts;
     this->vertCount = verts.size();
+}
+
+entity::entity(std::vector<float> verts, std::vector<unsigned int> indicies) {
+    this->verts = verts;
+    this->indicies = indicies;
+    this->vertCount = verts.size();
+    this->indexCount = indicies.size();
+    
 }
 
 entity::entity(entity &copy) {
@@ -29,6 +40,26 @@ float* entity::getVertices() {
     return this->verts.data();
 }
 
+unsigned int* entity::getIndices() {
+    return this->indicies.data();
+}
+
+
 int entity::getVertCount() {
     return this->vertCount;
+}
+
+int entity::getIndexCount() {
+    return this->indexCount;
+}
+
+
+
+Entity Entity::createEntity() {
+    static id_t currentId = 0;
+    return Entity{currentId++};
+}
+
+Entity::Entity(id_t objectId) : id{objectId} {
+
 }

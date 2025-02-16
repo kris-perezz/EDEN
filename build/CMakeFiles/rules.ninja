@@ -17,7 +17,7 @@
 rule C_COMPILER__EDEN_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/sbin/clang $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/sbin/gcc $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -27,7 +27,7 @@ rule C_COMPILER__EDEN_unscanned_Debug
 rule CXX_COMPILER__EDEN_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/sbin/clang++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}/sbin/g++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -37,7 +37,7 @@ rule CXX_COMPILER__EDEN_unscanned_Debug
 rule CXX_EXECUTABLE_LINKER__EDEN_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = $PRE_LINK && /sbin/clang++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = $PRE_LINK && /sbin/g++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 

@@ -7,11 +7,15 @@ find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
 add_executable(EDEN 
-    inc/config.h
+    inc/config.h 
+    inc/camera.h
+    src/camera.cpp
+    src/main.cpp
+    src/glad.c
+    inc/keyboard.h
+    src/keyboard.cpp
     inc/entity.h
-    src/entity.cpp
-    src/main.cpp 
-    src/glad.c)
+    src/entity.cpp)
 
 target_include_directories(EDEN PRIVATE dependencies inc)
 
