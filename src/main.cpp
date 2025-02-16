@@ -19,8 +19,16 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height); // ✅ Resize OpenGL viewport
+    glViewport(0, 0, width, height);
+
+    // Retrieve camera instance and update aspect ratio
+    Camera* camera = static_cast<Camera*>(glfwGetWindowUserPointer(window));
+    if (camera) {
+        float aspectRatio = static_cast<float>(width) / static_cast<float>(height);
+        camera->setPerspectiveProjection(glm::radians(45.0f), aspectRatio, 0.1f, 100.0f);
+    }
 }
+
 
 
 int main() {
@@ -38,7 +46,6 @@ int main() {
     window = glfwCreateWindow(640, 480, "My Window", NULL, NULL);
     glfwMakeContextCurrent(window);
 
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
@@ -76,11 +83,11 @@ int main() {
     glfwSetKeyCallback(window, keyCallback);
 
     // --- Camera Setup ---
-    Camera camera;
-    // Configure perspective projection: 45° FOV, correct aspect, near and far clipping planes
-    camera.setPerspectiveProjection(glm::radians(45.0f), 640.0f / 480.0f, 0.1f, 100.0f);
-    // Set view: camera positioned at (0,0,3) looking at the origin
-    camera.setViewTarget(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f));
+    Camera camera; // ✅ Define the camera instance globally in main()
+
+    glfwSetWindowUserPointer(window, &camera);  // ✅ Store camera pointer in GLFW window
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // ✅ Set callback
+
 
     // Get uniform locations from your shader
     unsigned int viewLoc = glGetUniformLocation(shaderProgram, "view");
@@ -156,7 +163,9 @@ int main() {
         
         // Pass matrices to shader
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(camera.getViewMat()));
+        // Pass updated projection matrix to the shader
         glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(camera.getProjection()));
+
         
         //std::cout << "💡 Light Position: " 
           //<< lightPos.x << ", " 

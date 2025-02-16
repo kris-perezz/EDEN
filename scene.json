@@ -1,353 +1,340 @@
 [
   {
-    "type": "squarePyramid",
-    "position": [
-      0,
-      0,
-      0
-    ],
-    "colour": [
-      0.5,
-      0.35,
-      0.05
-    ]
-  },
-  {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
       2,
       0,
-      0
+      2
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
-      4,
+      5,
       0,
-      0
+      3
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
-    "position": [
-      6,
-      0,
-      0
-    ],
-    "colour": [
-      0.5,
-      0.35,
-      0.05
-    ]
-  },
-  {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
       8,
       0,
-      0
+      1
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
-      10,
+      11,
       0,
-      0
+      4
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
-    "position": [
-      12,
-      0,
-      0
-    ],
-    "colour": [
-      0.5,
-      0.35,
-      0.05
-    ]
-  },
-  {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
       14,
       0,
-      0
+      2
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
+    "type": "Tree",
+    "position": [
+      3,
+      0,
+      6
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      6,
+      0,
+      5
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      9,
+      0,
+      7
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      12,
+      0,
+      6
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      15,
+      0,
+      5
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      1,
+      0,
+      10
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      4,
+      0,
+      12
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      7,
+      0,
+      11
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      10,
+      0,
+      13
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      13,
+      0,
+      10
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
     "position": [
       16,
       0,
-      0
+      12
     ],
     "colour": [
-      0.5,
-      0.35,
-      0.05
+      0.11,
+      0.4,
+      0.19
     ]
   },
   {
-    "type": "squarePyramid",
+    "type": "Tree",
     "position": [
-      18,
-      0,
-      0
-    ],
-    "colour": [
-      0.5,
-      0.35,
-      0.05
-    ]
-  },
-  {
-    "type": "Cube",
-    "position": [
-      10,
-      0,
-      10
-    ],
-    "colour": [
-      0.7,
-      0.2,
-      0.2
-    ]
-  },
-  {
-    "type": "Cube",
-    "position": [
-      10,
-      1,
-      10
-    ],
-    "colour": [
-      0.7,
-      0.2,
-      0.2
-    ]
-  },
-  {
-    "type": "Cube",
-    "position": [
-      10,
-      2,
-      10
-    ],
-    "colour": [
-      0.7,
-      0.2,
-      0.2
-    ]
-  },
-  {
-    "type": "Cube",
-    "position": [
-      10,
       3,
-      10
-    ],
-    "colour": [
-      0.7,
-      0.2,
-      0.2
-    ]
-  },
-  {
-    "type": "squarePyramid",
-    "position": [
-      10,
-      4,
-      10
-    ],
-    "colour": [
-      0.5,
-      0.25,
-      0.0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      5,
       0,
       15
     ],
     "colour": [
+      0.11,
       0.4,
-      0.2,
-      0.0
+      0.19
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Tree",
     "position": [
-      5,
-      1,
-      15
+      6,
+      0,
+      14
     ],
     "colour": [
+      0.11,
       0.4,
-      0.2,
-      0.0
+      0.19
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Tree",
     "position": [
-      5,
-      2,
-      15
+      9,
+      0,
+      16
     ],
     "colour": [
+      0.11,
       0.4,
-      0.2,
-      0.0
+      0.19
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Tree",
     "position": [
-      5,
-      3,
-      15
-    ],
-    "colour": [
-      0.4,
-      0.2,
-      0.0
-    ]
-  },
-  {
-    "type": "Cone",
-    "position": [
-      5,
-      4,
-      15
-    ],
-    "colour": [
-      0.0,
-      0.5,
-      0.0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      15,
+      12,
       0,
       15
     ],
     "colour": [
+      0.11,
       0.4,
-      0.2,
-      0.0
+      0.19
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Tree",
     "position": [
       15,
-      1,
-      15
+      0,
+      14
     ],
     "colour": [
+      0.11,
       0.4,
-      0.2,
-      0.0
+      0.19
     ]
   },
   {
-    "type": "Cylinder",
+    "type": "Tree",
     "position": [
-      15,
       2,
-      15
-    ],
-    "colour": [
-      0.4,
-      0.2,
-      0.0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      15,
-      3,
-      15
-    ],
-    "colour": [
-      0.4,
-      0.2,
-      0.0
-    ]
-  },
-  {
-    "type": "Cylinder",
-    "position": [
-      15,
-      4,
-      15
-    ],
-    "colour": [
-      0.4,
-      0.2,
-      0.0
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      15,
-      5,
-      15
-    ],
-    "colour": [
-      0.0,
-      0.5,
-      0.0
-    ]
-  },
-  {
-    "type": "Sphere",
-    "position": [
-      18,
-      18,
+      0,
       18
     ],
     "colour": [
-      1.0,
-      1.0,
-      0.0
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      5,
+      0,
+      17
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      8,
+      0,
+      19
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      11,
+      0,
+      18
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
+    ]
+  },
+  {
+    "type": "Tree",
+    "position": [
+      14,
+      0,
+      17
+    ],
+    "colour": [
+      0.11,
+      0.4,
+      0.19
     ]
   }
 ]
