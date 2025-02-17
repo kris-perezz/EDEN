@@ -27,6 +27,23 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   }
 }
 
+void rotateViewerObject(Entity *viewerObject, float mouseSens, float mouseX,
+                        float mouseY) {
+  mouseX *= mouseSens;
+  mouseY *= mouseSens;
+
+  viewerObject->transform.rotation.x += mouseX;
+  viewerObject->transform.rotation.y += mouseY;
+
+  if (viewerObject->transform.rotation.y > 89.0f) {
+    viewerObject->transform.rotation.y = 89.0f;
+  }
+
+  if (viewerObject->transform.rotation.y < -89.0f) {
+    viewerObject->transform.rotation.y = -89.0f;
+  }
+}
+
 int main() {
 
   GLFWwindow *window;
@@ -131,13 +148,6 @@ int main() {
 
     glfwPollEvents();
 
-    auto newTime = std::chrono::high_resolution_clock::now();
-    float frameTime =
-        std::chrono::duration<float, std::chrono::seconds::period>(newTime -
-                                                                   currentTime)
-            .count();
-    currentTime = newTime;
-
     // ImGui Frames
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -145,11 +155,18 @@ int main() {
 
     edenTools.RenderMenu();
 
-    // Move the camera
+    auto newTime = std::chrono::high_resolution_clock::now();
+    float frameTime =
+        std::chrono::duration<float, std::chrono::seconds::period>(newTime -
+                                                                   currentTime)
+            .count();
+    currentTime = newTime;
+
     cameraController.moveInPlaneXZ(window, frameTime, viewerObject);
     camera.setViewYXZ(viewerObject.transform.translation,
                       viewerObject.transform.rotation);
 
+    // Move the camera
     // ✅ Make the light rotate around the origin (0,0,0)
     float timeValue = glfwGetTime();
     float radius = 8.0f; // Distance from the origin
