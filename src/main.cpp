@@ -53,27 +53,31 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action,
    * Movement
    */
 
-  if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+  if (cameraCanMove && key == GLFW_KEY_W &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position -= camera.moveSpeed * camera.front;
   }
-  if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+  if (cameraCanMove && key == GLFW_KEY_A &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position -= camera.moveSpeed * camera.right;
   }
 
-  if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+  if (cameraCanMove && key == GLFW_KEY_S &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position += camera.moveSpeed * camera.front;
   }
 
-  if (key == GLFW_KEY_D && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+  if (cameraCanMove && key == GLFW_KEY_D &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position += camera.moveSpeed * camera.right;
   }
 
-  if (key == GLFW_KEY_LEFT_CONTROL &&
+  if (cameraCanMove && key == GLFW_KEY_LEFT_CONTROL &&
       (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position -= camera.moveSpeed * camera.up;
   }
 
-  if (key == GLFW_KEY_SPACE &&
+  if (cameraCanMove && key == GLFW_KEY_SPACE &&
       (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position += camera.moveSpeed * camera.up;
   }
@@ -185,12 +189,6 @@ int main() {
   // Create an actual object instead of an R-value
   Entity viewerObject = Entity::createEntity();
 
-  // Ensure transform component exists
-  viewerObject.transform.translation = glm::vec3(0.0f, 0.0f, 0.0f);
-
-  KeyboardMovementController cameraController{};
-  auto currentTime = std::chrono::high_resolution_clock::now();
-
   if (shaderProgram == 0 || normalShaderProgram == 0) {
     std::cerr << "❌ ERROR: Shader failed to load!" << std::endl;
   }
@@ -230,14 +228,7 @@ int main() {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    edenTools.RenderMenu();
-
-    auto newTime = std::chrono::high_resolution_clock::now();
-    float frameTime =
-        std::chrono::duration<float, std::chrono::seconds::period>(newTime -
-                                                                   currentTime)
-            .count();
-    currentTime = newTime;
+    edenTools.RenderMenu(&sceneObjects);
 
     // Move the camera
     // ✅ Make the light rotate around the origin (0,0,0)

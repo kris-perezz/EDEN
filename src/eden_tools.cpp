@@ -1,6 +1,7 @@
 #include "eden_tools.hpp"
 #include "imgui/imgui.h"
 #include "imgui/implot.h"
+#include "scene_loader.h"
 #include <cstdlib>
 #include <cstring>
 
@@ -54,43 +55,52 @@ void EdenTools::RenderFpsCounter() {
   }
 }
 
-void EdenTools::RenderPromptInput() const {
+void EdenTools::RenderPromptInput(std::vector<Entity> *sceneObjects) const {
   ImGui::Text("Enter a scene you would like to create");
   ImGui::InputTextMultiline("##edenprompt", *this->promptBuffer, 300);
   if (ImGui::Button("Create Scene Data")) {
     char buffer[409];
-    const char command[] =
-        "python ~/Documents/code/cpp/EDEN/api.py"; // PYTHON SCRIPT HERE IS
-                                                   // HARDCODED
+    const char command[] = "python api.py"; // PYTHON SCRIPT HERE IS
     sprintf(buffer, "%s '%s'", command, *this->promptBuffer);
     system(buffer);
   }
+  if (ImGui::Button("Reload Scene")) {
+    *sceneObjects = SceneLoader::loadScene("objects.json");
+  }
 }
 
-void EdenTools::RenderMenu() {
-  if (ImGui::Begin("EDEN")) {
-    // Tabs
-    if (ImGui::BeginTabBar("Tools")) {
-      if (ImGui::BeginTabItem("Prompt")) {
-        this->RenderPromptInput();
-        ImGui::EndTabItem();
-      }
+void EdenTools::RenderMenu(std::vector<Entity> *sceneObjects) {
+  ImGui::Begin("EDEN");
 
-      ImGui::EndTabBar();
+  ImGui::Text("Keybinds");
+  ImGui::BulletText("WASD -> Move around");
+  ImGui::BulletText("Space / Left CTRL -> Move up and down");
+  ImGui::BulletText("Left Shift -> Enable Cursor");
+  ImGui::BulletText("N -> Toggle Normal/Lighting Mode");
+
+  // Tabs
+  if (ImGui::BeginTabBar("Tools")) {
+    if (ImGui::BeginTabItem("Prompt")) {
+      this->RenderPromptInput(sceneObjects);
+      ImGui::EndTabItem();
     }
 
-    ImGui::Separator();
+    ImGui::EndTabBar();
+  }
 
-    if (ImGui::BeginTabBar("Diagnostics")) {
+  ImGui::Separator();
 
-      if (ImGui::BeginTabItem("FPS")) {
-        this->RenderFpsCounter();
-        ImGui::EndTabItem();
-      }
+  if (ImGui::BeginTabBar("Diagnostics")) {
 
-      ImGui::EndTabBar();
+    if (ImGui::BeginTabItem("FPS")) {
+      this->RenderFpsCounter();
+      ImGui::EndTabItem();
     }
 
-    ImGui::End();
-  };
+    ImGui::EndTabBar();
+  }
+
+  ImGui::Separator();
+
+  ImGui::End();
 }

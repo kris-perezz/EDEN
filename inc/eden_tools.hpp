@@ -1,6 +1,7 @@
 #ifndef EDEN_TOOLS_H_
 #define EDEN_TOOLS_H_
 
+#include "entity.h"
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
@@ -59,9 +60,9 @@ public:
   // Setters
 
   // Render Tool Windows
-  void RenderMenu();
+  void RenderMenu(std::vector<Entity> *sceneObjects);
   void RenderFpsCounter();
-  void RenderPromptInput() const;
+  void RenderPromptInput(std::vector<Entity> *sceneObjects) const;
 };
 
 #endif // !EDEN_TOOLS_H_
