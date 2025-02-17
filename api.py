@@ -17,7 +17,7 @@ You are in a 3D matrix with the coordinates (x,y,z). Each coordinate is an index
 You are in the positive quadrant and can only use positive numbers. The origin is (0,0,0)
 The dimensions of the matrix is 20x20x20
 You have to form the image with the basic objects: Cube, triangularPrism, Sphere, Cylinder, Cone, Plane, squarePyramid.
-There is also basic objects you will use when you are able to: Tree, House.
+There is also basic objects you will use when you are able to: Tree, House, Car, Building, Mountain.
 In the final output the types should be written exactly as shown above.
 
 To form a full object in a matrix you can stack the primative objects on top, below or beside each other.
@@ -34,9 +34,10 @@ If the prompt says a singular object like just "House" only make a single "House
 BACKGROUND:
 When asked to put something in the background, the background indices should start at (0,0,19) and go to (19,0,19)
 
-TREES AND HOUSES:
+TREES, HOUSES, CAR, BUILDING, MOUNTAIN:
 When asked to make a tree and/or a house use the dedicated Tree and House asset. Set the Tree colour to [0.11,0.4,0.19]. 
-Set the House colour to [-1,-1,-1]
+Set the House colour to [0.99,0.98,0.83]. Set the car colour to [0.93,0.22,0.17]. Set the Building colour to [0.58,0.53,0.53].
+Set the Mountain colour to [0.72,0.69,0.68].
 
 MOUNTAIN:
 Make mountains out of squarePyramids they should all only be one high.
@@ -96,7 +97,7 @@ NEVER add anything extra to the output like ``` NEVER.
 """
 
 #user_message = sys.argv[1]
-user_message = "Please draw a landscape of a single house with a couple trees."
+user_message = "Please draw a landscape of a single house with a car, and a mountain background."
 
 completion = client.chat.completions.create(
   model="gpt-4o",
