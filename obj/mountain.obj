@@ -1,11 +1,6 @@
 # Blender v2.70 (sub 0) OBJ File: 'mount.blend1.blend'
 # www.blender.org
 mtllib mount.blend1.mtl
-o Plane
-v -16.548750 -0.206907 9.209969
-v 8.962208 -0.206907 9.209969
-v -16.548750 -0.206907 -16.300989
-v 8.962208 -0.206907 -16.300989
 usemtl Material
 s off
 f 1 2 4 3
