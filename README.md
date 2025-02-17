@@ -5,6 +5,12 @@ Hackathon Project
 ![image](https://github.com/user-attachments/assets/40e36818-756e-4e54-a970-480554f7b415)
 
 
+## Table of Contents
+- [Requirements](#Requirements)
+- [Running Eden](#Running-EDEN)
+- [Potential Issues](#Potential-Issues)
+- [Credits](#Credits)
+
 ## Requirements
 **MUST HAVES**
 - A Linux OS, (Mac Silcone can work but requires messing around and is not officially supported by this guide)
