@@ -1,4 +1,7 @@
+#include "camera.h"
 #include "config.h"
+#include <glm/ext/matrix_float4x4.hpp>
+#include <glm/fwd.hpp>
 
 // ✅ Define `useNormalShader` globally
 bool useNormalShader = false;
@@ -42,6 +45,27 @@ void rotateViewerObject(Entity *viewerObject, float mouseSens, float mouseX,
   if (viewerObject->transform.rotation.y < -89.0f) {
     viewerObject->transform.rotation.y = -89.0f;
   }
+}
+
+Camera camera(glm::vec3{0.0f, 0.0f, 3.0f});
+
+void mouseCallback(GLFWwindow *window, double xpos, double ypos) {
+  static double lastX = 0, lastY = 0;
+  static bool firstMouse = true;
+
+  if (firstMouse) {
+    lastX = xpos;
+    lastY = ypos;
+    firstMouse = false;
+  }
+
+  double xoffset = xpos - lastX;
+  double yoffset =
+      lastY - ypos; // Reversed since y-coordinates go from bottom to top
+  lastX = xpos;
+  lastY = ypos;
+
+  camera.processMouseMovement(xoffset, yoffset);
 }
 
 int main() {
@@ -90,7 +114,8 @@ int main() {
   glfwSetKeyCallback(window, keyCallback);
 
   // --- Camera Setup ---
-  Camera camera; // ✅ Define the camera instance globally in main()
+  glfwSetCursorPosCallback(window, mouseCallback);
+  glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
   glfwSetWindowUserPointer(window,
                            &camera); // ✅ Store camera pointer in GLFW window
@@ -148,6 +173,8 @@ int main() {
 
     glfwPollEvents();
 
+    glm::mat4 view = camera.getViewMatrix();
+
     // ImGui Frames
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -161,10 +188,6 @@ int main() {
                                                                    currentTime)
             .count();
     currentTime = newTime;
-
-    cameraController.moveInPlaneXZ(window, frameTime, viewerObject);
-    camera.setViewYXZ(viewerObject.transform.translation,
-                      viewerObject.transform.rotation);
 
     // Move the camera
     // ✅ Make the light rotate around the origin (0,0,0)
@@ -186,8 +209,8 @@ int main() {
 
     // Pass camera position to the shader
     glm::vec3 cameraPos = viewerObject.transform.translation;
-    glUniform3f(glGetUniformLocation(shaderProgram, "viewPos"), cameraPos.x,
-                cameraPos.y, cameraPos.z);
+    glUniform3f(glGetUniformLocation(shaderProgram, "viewPos"), view[0].x,
+                view[0].y, view[0].z);
 
     // Set object color (modify per entity if needed)
     glm::vec3 objectColour = glm::vec3(1.0f, 0.5f, 0.31f);
@@ -195,11 +218,10 @@ int main() {
                 objectColour.x, objectColour.y, objectColour.z);
 
     // Pass matrices to shader
-    glUniformMatrix4fv(viewLoc, 1, GL_FALSE,
-                       glm::value_ptr(camera.getViewMat()));
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
     // Pass updated projection matrix to the shader
     glUniformMatrix4fv(projLoc, 1, GL_FALSE,
-                       glm::value_ptr(camera.getProjection()));
+                       glm::value_ptr(camera.getProjectionMatrix()));
 
     // std::cout << "💡 Light Position: "
     //<< lightPos.x << ", "
