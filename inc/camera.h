@@ -23,6 +23,7 @@ public:
   float pitch = 0.0f;
 
   float sensitivity = 0.1f;
+  float moveSpeed = 1.50f;
 
   // Constructor
   Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f),
@@ -38,6 +39,8 @@ public:
   }
 
   void processMouseMovement(float xoffset, float yoffset);
+
+  void processWASDInput();
 
   void setOrthographicProjection(float left, float right, float top,
                                  float bottom, float near, float far);

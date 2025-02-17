@@ -23,6 +23,8 @@ void Camera::processMouseMovement(float xoffset, float yoffset) {
   updateVectors();
 }
 
+void Camera::processWASDInput() { updateVectors(); }
+
 void Camera::setOrthographicProjection(float left, float right, float top,
                                        float bottom, float near, float far) {
   projectionMatrix = glm::mat4{1.0f};

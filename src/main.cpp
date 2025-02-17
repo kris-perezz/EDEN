@@ -1,22 +1,9 @@
-#include "camera.h"
 #include "config.h"
-#include <glm/ext/matrix_float4x4.hpp>
-#include <glm/fwd.hpp>
 
 // ✅ Define `useNormalShader` globally
 bool useNormalShader = false;
 unsigned int shaderProgram;
 unsigned int normalShaderProgram;
-
-void keyCallback(GLFWwindow *window, int key, int scancode, int action,
-                 int mods) {
-  if (key == GLFW_KEY_N && action == GLFW_PRESS) {
-    useNormalShader = !useNormalShader; // ✅ No extern needed
-
-    std::this_thread::sleep_for(
-        std::chrono::milliseconds(100)); // ✅ Add slight delay
-  }
-}
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
   glViewport(0, 0, width, height);
@@ -48,6 +35,38 @@ void rotateViewerObject(Entity *viewerObject, float mouseSens, float mouseX,
 }
 
 Camera camera(glm::vec3{0.0f, 0.0f, 3.0f});
+
+void keyCallback(GLFWwindow *window, int key, int scancode, int action,
+                 int mods) {
+
+  if (key == GLFW_KEY_N && action == GLFW_PRESS) {
+    useNormalShader = !useNormalShader; // ✅ No extern needed
+
+    std::this_thread::sleep_for(
+        std::chrono::milliseconds(100)); // ✅ Add slight delay
+  }
+
+  /**
+   * WASD
+   * Movement
+   */
+
+  if (key == GLFW_KEY_W && action == GLFW_PRESS) {
+    camera.position -= camera.moveSpeed * camera.front;
+  }
+
+  if (key == GLFW_KEY_A && action == GLFW_PRESS) {
+    camera.position -= camera.moveSpeed * camera.right;
+  }
+
+  if (key == GLFW_KEY_S && action == GLFW_PRESS) {
+    camera.position += camera.moveSpeed * camera.front;
+  }
+
+  if (key == GLFW_KEY_D && action == GLFW_PRESS) {
+    camera.position += camera.moveSpeed * camera.right;
+  }
+}
 
 void mouseCallback(GLFWwindow *window, double xpos, double ypos) {
   static double lastX = 0, lastY = 0;
