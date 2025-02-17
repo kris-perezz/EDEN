@@ -54,7 +54,7 @@ git clone git@github.com:kris-perezz/EDEN.git
 - This _should_ create the EDEN binary in out/Debug/ for you to run if all things go well
 
 **5. 💰 Profit 💰**
-- You can now use EDEN!
+- You can now use EDEN! Run the file, **out/Debug/EDEN** and enjoy!
 
 ---
 
