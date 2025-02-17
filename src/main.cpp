@@ -35,7 +35,9 @@ void rotateViewerObject(Entity *viewerObject, float mouseSens, float mouseX,
 }
 
 Camera camera(glm::vec3{0.0f, 0.0f, 3.0f});
+double lastMouseX, lastMouseY = 0;
 
+static bool cameraCanMove = true;
 void keyCallback(GLFWwindow *window, int key, int scancode, int action,
                  int mods) {
 
@@ -51,24 +53,47 @@ void keyCallback(GLFWwindow *window, int key, int scancode, int action,
    * Movement
    */
 
-  if (key == GLFW_KEY_W && action == GLFW_PRESS) {
+  if (key == GLFW_KEY_W && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position -= camera.moveSpeed * camera.front;
   }
-
-  if (key == GLFW_KEY_A && action == GLFW_PRESS) {
+  if (key == GLFW_KEY_A && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position -= camera.moveSpeed * camera.right;
   }
 
-  if (key == GLFW_KEY_S && action == GLFW_PRESS) {
+  if (key == GLFW_KEY_S && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position += camera.moveSpeed * camera.front;
   }
 
-  if (key == GLFW_KEY_D && action == GLFW_PRESS) {
+  if (key == GLFW_KEY_D && (action == GLFW_PRESS || action == GLFW_REPEAT)) {
     camera.position += camera.moveSpeed * camera.right;
+  }
+
+  if (key == GLFW_KEY_LEFT_CONTROL &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+    camera.position -= camera.moveSpeed * camera.up;
+  }
+
+  if (key == GLFW_KEY_SPACE &&
+      (action == GLFW_PRESS || action == GLFW_REPEAT)) {
+    camera.position += camera.moveSpeed * camera.up;
+  }
+
+  if (key == GLFW_KEY_LEFT_SHIFT && action == GLFW_PRESS) {
+    cameraCanMove = !cameraCanMove;
+    if (cameraCanMove) {
+      glfwSetCursorPos(window, lastMouseX, lastMouseY);
+    } else {
+      glfwGetCursorPos(window, &lastMouseX, &lastMouseY);
+    }
   }
 }
 
 void mouseCallback(GLFWwindow *window, double xpos, double ypos) {
+
+  if (!cameraCanMove) {
+    return;
+  }
+
   static double lastX = 0, lastY = 0;
   static bool firstMouse = true;
 
@@ -191,6 +216,12 @@ int main() {
   while (!glfwWindowShouldClose(window)) {
 
     glfwPollEvents();
+
+    if (!cameraCanMove) {
+      glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+    } else {
+      glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    }
 
     glm::mat4 view = camera.getViewMatrix();
 

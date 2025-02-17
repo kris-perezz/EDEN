@@ -7,8 +7,8 @@ void Camera::processMouseMovement(float xoffset, float yoffset) {
   xoffset *= sensitivity;
   yoffset *= sensitivity;
 
-  yaw += xoffset;
-  pitch += yoffset;
+  yaw -= xoffset;
+  pitch -= yoffset;
 
   // Camera can NOT look more than straight above
   if (pitch > 89.0f) {
