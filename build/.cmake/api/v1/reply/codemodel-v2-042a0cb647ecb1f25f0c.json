@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "EDEN::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-EDEN-Debug-cfd2d2ed8d999f0d0608.json",
+					"jsonFile" : "target-EDEN-bf9e8fa170a035c534d9.json",
 					"name" : "EDEN",
 					"projectIndex" : 0
 				}
