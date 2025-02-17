@@ -4,3 +4,4 @@ EDEN
 Makefile
 CMakeFiles/
 .vscode
+.env

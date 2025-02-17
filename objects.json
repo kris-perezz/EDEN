@@ -1,0 +1,275 @@
+[
+  {
+    "type": "House",
+    "position": [
+      10,
+      0,
+      10
+    ],
+    "colour": [
+      0.99,
+      0.98,
+      0.83
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      0,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      1,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      2,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      3,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      4,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      5,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      6,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      7,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      8,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      9,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      10,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      11,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      12,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      13,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      14,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      15,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      16,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      17,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      18,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  },
+  {
+    "type": "Mountain",
+    "position": [
+      19,
+      0,
+      19
+    ],
+    "colour": [
+      0.72,
+      0.69,
+      0.68
+    ]
+  }
+]
