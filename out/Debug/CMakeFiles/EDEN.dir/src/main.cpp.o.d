@@ -1,8 +1,8 @@
 CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /home/kennek/Documents/code/cpp/EDEN/src/main.cpp \
  /usr/include/stdc-predef.h \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/config.h \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/../dependencies/glad/glad.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/config.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/../dependencies/glad/glad.h \
  /home/kennek/Documents/code/cpp/EDEN/dependencies/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/libc-header-start.h \
@@ -150,12 +150,13 @@ CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
  /usr/include/c++/14.2.1/bits/fstream.tcc \
  /usr/include/c++/14.2.1/iostream /usr/include/c++/14.2.1/sstream \
- /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/vector \
+ /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/utility \
+ /usr/include/c++/14.2.1/bits/stl_relops.h /usr/include/c++/14.2.1/vector \
  /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/14.2.1/bits/stl_vector.h \
  /usr/include/c++/14.2.1/bits/stl_bvector.h \
  /usr/include/c++/14.2.1/bits/vector.tcc \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/camera.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/camera.h \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/14.2.1/cmath /usr/include/math.h \
  /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
@@ -297,7 +298,8 @@ CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
  /usr/include/glm/detail/func_integer.inl \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/entity.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/entity.h \
+ /home/kennek/Documents/code/cpp/EDEN/dependencies/glad/glad.h \
  /usr/include/c++/14.2.1/memory \
  /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
  /usr/include/c++/14.2.1/bits/stl_raw_storage_iter.h \
@@ -326,7 +328,7 @@ CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /usr/include/glm/ext/matrix_transform.hpp \
  /usr/include/glm/ext/matrix_transform.inl \
  /usr/include/glm/gtc/matrix_transform.inl \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/eden_tools.hpp \
+ /home/kennek/Documents/code/cpp/EDEN/inc/eden_tools.hpp \
  /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui.h \
  /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imconfig.h \
  /usr/include/string.h /usr/include/strings.h \
@@ -437,8 +439,9 @@ CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/amxfp16intrin.h \
  /usr/include/c++/14.2.1/cstring \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/keyboard.h \
- /home/kennek/Documents/code/cpp/EDEN/src/../inc/tiny_obj_loader.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/keyboard.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/scene_loader.h \
+ /home/kennek/Documents/code/cpp/EDEN/inc/tiny_obj_loader.h \
  /usr/include/c++/14.2.1/map /usr/include/c++/14.2.1/bits/stl_tree.h \
  /usr/include/c++/14.2.1/bits/node_handle.h \
  /usr/include/c++/14.2.1/bits/stl_map.h \
@@ -479,4 +482,6 @@ CMakeFiles/EDEN.dir/src/main.cpp.o: \
  /usr/include/glm/ext/vector_int1_sized.hpp \
  /usr/include/glm/ext/vector_uint1.hpp \
  /usr/include/glm/ext/vector_uint1_sized.hpp \
- /usr/include/glm/gtc/type_ptr.inl
+ /usr/include/glm/gtc/type_ptr.inl /usr/include/c++/14.2.1/thread \
+ /usr/include/c++/14.2.1/bits/std_thread.h \
+ /usr/include/c++/14.2.1/bits/this_thread_sleep.h

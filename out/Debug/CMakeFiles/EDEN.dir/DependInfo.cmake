@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kennek/Documents/code/cpp/EDEN/src/entity.cpp" "CMakeFiles/EDEN.dir/src/entity.cpp.o" "gcc" "CMakeFiles/EDEN.dir/src/entity.cpp.o.d"
   "/home/kennek/Documents/code/cpp/EDEN/src/keyboard.cpp" "CMakeFiles/EDEN.dir/src/keyboard.cpp.o" "gcc" "CMakeFiles/EDEN.dir/src/keyboard.cpp.o.d"
   "/home/kennek/Documents/code/cpp/EDEN/src/main.cpp" "CMakeFiles/EDEN.dir/src/main.cpp.o" "gcc" "CMakeFiles/EDEN.dir/src/main.cpp.o.d"
+  "/home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp" "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o" "gcc" "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o.d"
   "" "EDEN" "gcc" "CMakeFiles/EDEN.dir/link.d"
   )
 

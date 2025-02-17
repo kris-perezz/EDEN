@@ -85,12 +85,12 @@ clean: CMakeFiles/EDEN.dir/clean
 CMakeFiles/EDEN.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target EDEN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target EDEN"
 .PHONY : CMakeFiles/EDEN.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EDEN.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/EDEN.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles 0
 .PHONY : CMakeFiles/EDEN.dir/rule
@@ -102,7 +102,7 @@ EDEN: CMakeFiles/EDEN.dir/rule
 # codegen rule for target.
 CMakeFiles/EDEN.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Finished codegen for target EDEN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Finished codegen for target EDEN"
 .PHONY : CMakeFiles/EDEN.dir/codegen
 
 # clean rule for target.

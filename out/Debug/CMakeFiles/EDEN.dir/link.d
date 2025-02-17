@@ -2,6 +2,7 @@ EDEN: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
+  CMakeFiles/EDEN.dir/src/scene_loader.cpp.o \
   CMakeFiles/EDEN.dir/src/camera.cpp.o \
   CMakeFiles/EDEN.dir/src/main.cpp.o \
   CMakeFiles/EDEN.dir/src/glad.c.o \
@@ -57,6 +58,8 @@ EDEN: \
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
+
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.o:
 
 CMakeFiles/EDEN.dir/src/camera.cpp.o:
 

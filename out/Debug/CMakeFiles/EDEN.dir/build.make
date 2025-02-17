@@ -72,10 +72,24 @@ include CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/codegen:
 .PHONY : CMakeFiles/EDEN.dir/codegen
 
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.o: CMakeFiles/EDEN.dir/flags.make
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EDEN.dir/src/scene_loader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/scene_loader.cpp.o -MF CMakeFiles/EDEN.dir/src/scene_loader.cpp.o.d -o CMakeFiles/EDEN.dir/src/scene_loader.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp
+
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EDEN.dir/src/scene_loader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp > CMakeFiles/EDEN.dir/src/scene_loader.cpp.i
+
+CMakeFiles/EDEN.dir/src/scene_loader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EDEN.dir/src/scene_loader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp -o CMakeFiles/EDEN.dir/src/scene_loader.cpp.s
+
 CMakeFiles/EDEN.dir/src/camera.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/camera.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/camera.cpp
 CMakeFiles/EDEN.dir/src/camera.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/EDEN.dir/src/camera.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EDEN.dir/src/camera.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/camera.cpp.o -MF CMakeFiles/EDEN.dir/src/camera.cpp.o.d -o CMakeFiles/EDEN.dir/src/camera.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/camera.cpp
 
 CMakeFiles/EDEN.dir/src/camera.cpp.i: cmake_force
@@ -89,7 +103,7 @@ CMakeFiles/EDEN.dir/src/camera.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/src/main.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/main.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/main.cpp
 CMakeFiles/EDEN.dir/src/main.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/EDEN.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/EDEN.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/main.cpp.o -MF CMakeFiles/EDEN.dir/src/main.cpp.o.d -o CMakeFiles/EDEN.dir/src/main.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/main.cpp
 
 CMakeFiles/EDEN.dir/src/main.cpp.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/EDEN.dir/src/main.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/src/glad.c.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/glad.c.o: /home/kennek/Documents/code/cpp/EDEN/src/glad.c
 CMakeFiles/EDEN.dir/src/glad.c.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/EDEN.dir/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/EDEN.dir/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/glad.c.o -MF CMakeFiles/EDEN.dir/src/glad.c.o.d -o CMakeFiles/EDEN.dir/src/glad.c.o -c /home/kennek/Documents/code/cpp/EDEN/src/glad.c
 
 CMakeFiles/EDEN.dir/src/glad.c.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/EDEN.dir/src/glad.c.s: cmake_force
 CMakeFiles/EDEN.dir/src/keyboard.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/keyboard.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/keyboard.cpp
 CMakeFiles/EDEN.dir/src/keyboard.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/EDEN.dir/src/keyboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EDEN.dir/src/keyboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/keyboard.cpp.o -MF CMakeFiles/EDEN.dir/src/keyboard.cpp.o.d -o CMakeFiles/EDEN.dir/src/keyboard.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/keyboard.cpp
 
 CMakeFiles/EDEN.dir/src/keyboard.cpp.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/EDEN.dir/src/keyboard.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/src/entity.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/entity.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/entity.cpp
 CMakeFiles/EDEN.dir/src/entity.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/EDEN.dir/src/entity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EDEN.dir/src/entity.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/entity.cpp.o -MF CMakeFiles/EDEN.dir/src/entity.cpp.o.d -o CMakeFiles/EDEN.dir/src/entity.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/entity.cpp
 
 CMakeFiles/EDEN.dir/src/entity.cpp.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/EDEN.dir/src/entity.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_draw.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_draw.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui_draw.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_widgets.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_widgets.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_opengl3.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_opengl3.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_opengl3.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_glfw.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_impl_glfw.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui_impl_glfw.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_tables.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/imgui_tables.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/imgui_tables.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/implot.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/implot.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.i: cmake_force
@@ -243,7 +257,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/implot.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o: /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/implot_items.cpp
 CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o -MF CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o.d -o CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/dependencies/imgui/implot_items.cpp
 
 CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.i: cmake_force
@@ -257,7 +271,7 @@ CMakeFiles/EDEN.dir/dependencies/imgui/implot_items.cpp.s: cmake_force
 CMakeFiles/EDEN.dir/src/eden_tools.cpp.o: CMakeFiles/EDEN.dir/flags.make
 CMakeFiles/EDEN.dir/src/eden_tools.cpp.o: /home/kennek/Documents/code/cpp/EDEN/src/eden_tools.cpp
 CMakeFiles/EDEN.dir/src/eden_tools.cpp.o: CMakeFiles/EDEN.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/EDEN.dir/src/eden_tools.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/EDEN.dir/src/eden_tools.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/EDEN.dir/src/eden_tools.cpp.o -MF CMakeFiles/EDEN.dir/src/eden_tools.cpp.o.d -o CMakeFiles/EDEN.dir/src/eden_tools.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/eden_tools.cpp
 
 CMakeFiles/EDEN.dir/src/eden_tools.cpp.i: cmake_force
@@ -270,6 +284,7 @@ CMakeFiles/EDEN.dir/src/eden_tools.cpp.s: cmake_force
 
 # Object files for target EDEN
 EDEN_OBJECTS = \
+"CMakeFiles/EDEN.dir/src/scene_loader.cpp.o" \
 "CMakeFiles/EDEN.dir/src/camera.cpp.o" \
 "CMakeFiles/EDEN.dir/src/main.cpp.o" \
 "CMakeFiles/EDEN.dir/src/glad.c.o" \
@@ -288,6 +303,7 @@ EDEN_OBJECTS = \
 # External object files for target EDEN
 EDEN_EXTERNAL_OBJECTS =
 
+EDEN: CMakeFiles/EDEN.dir/src/scene_loader.cpp.o
 EDEN: CMakeFiles/EDEN.dir/src/camera.cpp.o
 EDEN: CMakeFiles/EDEN.dir/src/main.cpp.o
 EDEN: CMakeFiles/EDEN.dir/src/glad.c.o
@@ -308,7 +324,7 @@ EDEN: /usr/lib/libglfw.so
 EDEN: /usr/lib/libGLX.so
 EDEN: /usr/lib/libOpenGL.so
 EDEN: CMakeFiles/EDEN.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable EDEN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/kennek/Documents/code/cpp/EDEN/out/Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable EDEN"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EDEN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -24,6 +24,8 @@ add_executable(
   EDEN
   inc/config.h
   inc/camera.h
+  inc/scene_loader.h
+  src/scene_loader.cpp
   src/camera.cpp
   src/main.cpp
   src/glad.c

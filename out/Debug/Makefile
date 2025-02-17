@@ -465,6 +465,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/scene_loader.o: src/scene_loader.cpp.o
+.PHONY : src/scene_loader.o
+
+# target to build an object file
+src/scene_loader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/src/scene_loader.cpp.o
+.PHONY : src/scene_loader.cpp.o
+
+src/scene_loader.i: src/scene_loader.cpp.i
+.PHONY : src/scene_loader.i
+
+# target to preprocess a source file
+src/scene_loader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/src/scene_loader.cpp.i
+.PHONY : src/scene_loader.cpp.i
+
+src/scene_loader.s: src/scene_loader.cpp.s
+.PHONY : src/scene_loader.s
+
+# target to generate assembly for a file
+src/scene_loader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/EDEN.dir/build.make CMakeFiles/EDEN.dir/src/scene_loader.cpp.s
+.PHONY : src/scene_loader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -516,6 +540,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/scene_loader.o"
+	@echo "... src/scene_loader.i"
+	@echo "... src/scene_loader.s"
 .PHONY : help
 
 

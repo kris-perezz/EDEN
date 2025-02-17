@@ -28,6 +28,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/EDEN.dir/src/keyboard.cpp.o.d"
   "CMakeFiles/EDEN.dir/src/main.cpp.o"
   "CMakeFiles/EDEN.dir/src/main.cpp.o.d"
+  "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o"
+  "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o.d"
   "EDEN"
   "EDEN.pdb"
 )

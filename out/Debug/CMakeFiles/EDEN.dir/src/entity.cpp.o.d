@@ -143,7 +143,8 @@ CMakeFiles/EDEN.dir/src/entity.cpp.o: \
  /usr/include/c++/14.2.1/bits/codecvt.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/basic_file.h \
  /usr/include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++io.h \
- /usr/include/c++/14.2.1/bits/fstream.tcc /usr/include/c++/14.2.1/sstream \
+ /usr/include/c++/14.2.1/bits/fstream.tcc \
+ /usr/include/c++/14.2.1/iostream /usr/include/c++/14.2.1/sstream \
  /usr/include/c++/14.2.1/bits/sstream.tcc /usr/include/c++/14.2.1/vector \
  /usr/include/c++/14.2.1/bits/stl_uninitialized.h \
  /usr/include/c++/14.2.1/bits/stl_vector.h \
@@ -292,7 +293,11 @@ CMakeFiles/EDEN.dir/src/entity.cpp.o: \
  /usr/include/glm/packing.hpp /usr/include/glm/detail/func_packing.inl \
  /usr/include/glm/detail/type_half.hpp \
  /usr/include/glm/detail/type_half.inl /usr/include/glm/integer.hpp \
- /usr/include/glm/detail/func_integer.inl /usr/include/c++/14.2.1/memory \
+ /usr/include/glm/detail/func_integer.inl \
+ /home/kennek/Documents/code/cpp/EDEN/dependencies/glad/glad.h \
+ /home/kennek/Documents/code/cpp/EDEN/dependencies/KHR/khrplatform.h \
+ /home/kennek/Documents/code/cpp/EDEN/dependencies/GLFW/glfw3.h \
+ /usr/include/c++/14.2.1/memory \
  /usr/include/c++/14.2.1/bits/stl_tempbuf.h \
  /usr/include/c++/14.2.1/bits/stl_raw_storage_iter.h \
  /usr/include/c++/14.2.1/bits/align.h \

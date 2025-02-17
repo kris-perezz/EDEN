@@ -2,9 +2,12 @@
 #define __entity_h__
 
 #include <fstream>
+#include <iostream>
 #include <sstream>
 #include <vector>
 #include <glm/glm.hpp>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include <memory>
 #include <glm/gtc/matrix_transform.hpp>
@@ -90,28 +93,36 @@ struct TransformComponent {
 
 
 class Entity {
-
     public:
         using id_t = unsigned int;
-
-        glm::vec3 color{};
+    
+        glm::vec3 colour;  // ✅ New field to store RGB color
         TransformComponent transform{};
-
-
+    
         static Entity createEntity();
-        id_t getId() {return id;}
-        
+        id_t getId() { return id; }
+    
+        void loadObj(std::string path);  // Move `loadObj()` here
+
+        void setColour(float r, float g, float b) { colour = glm::vec3(r, g, b); }  // ✅ Set color
+        glm::vec3 getColour() const { return colour; }  // ✅ Get col
+    
         Entity(const Entity &) = delete;
         Entity &operator=(const Entity &) = delete;
         Entity(Entity &&) = default;
         Entity &operator=(Entity &&) = default;
 
+        void setupMesh();  // Prepare VAO/VBO/EBO
+        void draw();  // Actually render the entity
 
     private:
         id_t id;
+        Entity(id_t objectId);
 
-        Entity(id_t objectId);// : id{objectId} {}
+        std::vector<float> vertices;
+        std::vector<unsigned int> indices;
 
-};
-
-#endif
+        unsigned int VAO = 0, VBO = 0, EBO = 0;
+    };
+    
+    #endif

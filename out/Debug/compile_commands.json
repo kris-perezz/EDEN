@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
+  "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -I/home/kennek/Documents/code/cpp/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/scene_loader.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp",
+  "file": "/home/kennek/Documents/code/cpp/EDEN/src/scene_loader.cpp",
+  "output": "CMakeFiles/EDEN.dir/src/scene_loader.cpp.o"
+},
+{
+  "directory": "/home/kennek/Documents/code/cpp/EDEN/out/Debug",
   "command": "/usr/bin/c++  -I/home/kennek/Documents/code/cpp/EDEN/dependencies -I/home/kennek/Documents/code/cpp/EDEN/inc -g -o CMakeFiles/EDEN.dir/src/camera.cpp.o -c /home/kennek/Documents/code/cpp/EDEN/src/camera.cpp",
   "file": "/home/kennek/Documents/code/cpp/EDEN/src/camera.cpp",
   "output": "CMakeFiles/EDEN.dir/src/camera.cpp.o"
